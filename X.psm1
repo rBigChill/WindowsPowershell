@@ -96,7 +96,7 @@ Function outlook {open $OUTLOOK}
 Function onenote {open $ONENOTE}
 
 # Startup
-Function X {
+Function lesgo {
     $apps = @($OUTLOOK, $ONENOTE, $CHROME)
     foreach ($app in $apps) {
         open $app; wait 1

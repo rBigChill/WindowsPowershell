@@ -2,7 +2,7 @@
 Import-Module $home\Documents\WindowsPowerShell\Var
 
 # Open github
-Function github() {open($GITHUB)}
+Function github() {open($HUB)}
 
 # Initialize git repository
 Function init() {

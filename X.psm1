@@ -8,22 +8,26 @@ Function wifi() {open($ROUTER)}
 
 # Google search
 Function google {
+    <#
+    .Description
+    -a to search all sites
+    #>
     param(
         [string]$esto,
-        [string]$all
+        [switch]$a
     )
-    
+
     $sites = @($GOOGLE, $BING, $YOU, $YAHOO, $DUCK)
-    
+
     if ([string]::IsNullOrEmpty($esto)) {
-        open $GOOGLE
+            open $GOOGLE
     } else {
-        switch($all.ToLower()) {
-            "all"{
+        switch ($true) {
+            $a {
                 foreach ($site in $sites) {
                     open "$site$esto"; wait 1
                 }
-            }
+            } 
             Default {
                 open "$GOOGLE$esto"; wait 1
             }
@@ -50,27 +54,32 @@ Function black {
 
 # Open Fav websites
 Function fav {
+    <#
+    .Description
+    -choice is s = social or n = news. Default is all 
+    #>
     param(
-        [string]$choice
+        [switch]$s,
+        [switch]$n
     )
     $social = @($TIK, $INSTA, $FACE, $DEV, $LINKED)
     $news = @($GITHUB, $REDDIT, $GNEWS, $YNEWS)
     
-    switch ($choice.ToLower()){
-        "social" {
+    switch ($true) {
+        $s {
             foreach ($site in $social) {
                 open $site; wait 1
             }
-        }
-        "news" {
+        } 
+        $n {
             foreach ($site in $news) {
                 open $site; wait 1
             }
-        }
+        } 
         Default {
             foreach ($site in $social) {
                 open $site; wait 1
-            }
+            } 
             foreach ($site in $news) {
                 open $site; wait 1
             }

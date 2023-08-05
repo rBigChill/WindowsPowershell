@@ -13,23 +13,23 @@ Function google {
     -a to search all sites
     #>
     param(
-        [string]$esto,
+        [string]$s,
         [switch]$a
     )
 
     $sites = @($GOOGLE, $BING, $YOU, $YAHOO, $DUCK)
 
-    if ([string]::IsNullOrEmpty($esto)) {
+    if ([string]::IsNullOrEmpty($s)) {
             open $GOOGLE
     } else {
         switch ($true) {
             $a {
                 foreach ($site in $sites) {
-                    open "$site$esto"; wait 1
+                    open "$site$s"; wait 1
                 }
             } 
             Default {
-                open "$GOOGLE$esto"; wait 1
+                open "$GOOGLE$s"; wait 1
             }
         }
     }

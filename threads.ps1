@@ -7,16 +7,12 @@ Function ItIs($hour, $min){
 	return $false
 }
 
-Function Thread {
-	while ($true) {
-		if (ItIs 8 55){
-            Write-Host Fuck Yes!!
-			Start-Sleep 60
-		}
-		else {
-			Start-Sleep -Seconds 1
-		}
+while ($true) {
+	if (ItIs 8 55){
+		Write-Host Fuck Yes!!
+		Start-Sleep 60
+	}
+	else {
+		Start-Sleep -Seconds 1
 	}
 }
-
-Thread

@@ -1,15 +1,36 @@
+# Import modules...
 Import-Module $home\Documents\WindowsPowerShell\X
+Import-Module $home\Documents\WindowsPowerShell\github
 
+# Start my threads
 Start-Job -FilePath $home\Documents\WindowsPowerShell\threads.ps1
 
-# Alias
-Function ll {ls | more}
-
+# Personal Functions
+Function su() {start-process powershell -verb runas}
+Function ll {Get-ChildItem | more}
 #Function Prompt {"`n:)~ "}
 Function lf {Get-Command -Module X}
 Function cc {Set-Location $home}
 Function me {Set-Location "$home\Documents\WindowsPowerShell"}
 Function work {Set-Location "$home\OneDrive\Work"}
+
+Function open($esto) {Start-Process $esto}
+Function wait([int]$time) {Start-Sleep -Seconds $time}
+Function print($esto) {Write-Host $esto}
+Function printFile {
+    param(
+        [string]$esto
+    )
+    Get-Content $esto
+}
+
+# Open www website
+Function www() {
+  param(
+      [string]$esto
+  )
+  open "www.$esto"
+}
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.

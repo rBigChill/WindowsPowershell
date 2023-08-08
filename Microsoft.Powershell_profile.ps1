@@ -6,10 +6,10 @@ Import-Module $home\Documents\WindowsPowerShell\github
 Start-Job -FilePath $home\Documents\WindowsPowerShell\threads.ps1
 
 # Personal Functions
-Function off() {shutdown /s /t 0}
-Function restart() {Restart-Computer}
-Function su() {start-process powershell -verb runas}
-Function ll {Get-ChildItem | more}
+Function off {shutdown /s /t 0}
+Function restart {Restart-Computer}
+Function su {start-process powershell -verb runas}
+Function ll($esto) {Get-ChildItem $esto | more}
 #Function Prompt {"`n:)~ "}
 Function lf {Get-Command -Module X}
 Function cc {Set-Location $home}

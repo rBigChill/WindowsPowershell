@@ -12,7 +12,7 @@ $global:YAHOO= "https://search.yahoo.com/search?p="
 $global:DUCK= "https://duckduckgo.com/?va=v&t=ha&q="
 
 # Files
-$global:FINANCE = "C:\Users\cisne\OneDrive\Documents\Finances.xlsx"
+$global:FINANCE = "$HOME\OneDrive\Documents\Finances.xlsx"
 
 # Applications
 $global:CHROME = "C:\Program Files\Google\Chrome\Application\chrome.exe"

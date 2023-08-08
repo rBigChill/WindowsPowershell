@@ -2,9 +2,9 @@
 Import-Module $home\Documents\WindowsPowerShell\Var
 
 # Longview Weather
-Function weather() {open($WEATHER)}
+Function weather {open($WEATHER)}
 
-Function wifi() {open($ROUTER)}
+Function wifi {open($ROUTER)}
 
 # Google search
 Function google {

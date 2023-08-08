@@ -2,10 +2,10 @@
 Import-Module $home\Documents\WindowsPowerShell\Var
 
 # Open github
-Function github() {open($GITHUB)}
+Function github {open($GITHUB)}
 
 # Initialize git repository
-Function init() {
+Function init {
     param(
         [string]$esto
     )
@@ -18,10 +18,10 @@ Function init() {
 }
 
 # Git Status
-Function status() {git status}
+Function status {git status}
 
 # Git Push
-Function push() {
+Function push {
     param(
         [string]$esto
     )

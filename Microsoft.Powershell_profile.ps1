@@ -27,7 +27,7 @@ Function printFile {
 }
 
 # Open www website
-Function www() {
+Function www {
   param(
       [string]$esto
   )

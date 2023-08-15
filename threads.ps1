@@ -1,7 +1,6 @@
 Function ItIs($hour, $min){
 	$now = Get-Date
-	if ($now.Hour -eq $hour -and $now.Minute -eq $min -and $now.DayOfWeek -ne "Saturday" -and $now.DayOfWeek -ne "Sunday") {
-		[system.media.systemsounds]::Beep.play()
+	if ($now.Hour -eq $hour -and $now.Minute -eq $min) {
 		return $true
 	}
 	return $false

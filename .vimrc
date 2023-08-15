@@ -32,3 +32,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'valloric/youcompleteme'
 
 call plug#end()
+
+:PlugUpdate
+ZZ
+:PlugUpgrade
+ZZ

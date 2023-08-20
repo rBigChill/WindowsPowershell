@@ -97,7 +97,7 @@ Function onenote {open $ONENOTE}
 
 # Startup
 Function leggo {
-    $apps = @($OUTLOOK, $ONENOTE, $CHROME)
+    $apps = @($OUTLOOK, $ONENOTE)
     foreach ($app in $apps) {
         open $app; wait 1
     }

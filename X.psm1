@@ -94,6 +94,7 @@ Function finance {open $FINANCE}
 Function chrome {open $CHROME}
 Function outlook {open $OUTLOOK}
 Function onenote {open $ONENOTE}
+Function crd {open $CRD}
 
 # Startup
 Function leggo {

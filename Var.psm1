@@ -18,6 +18,7 @@ $global:FINANCE = "$HOME\OneDrive\Documents\Finances.xlsx"
 $global:CHROME = "C:\Program Files\Google\Chrome\Application\chrome.exe"
 $global:OUTLOOK = "C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"
 $global:ONENOTE = "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE"
+$global:CRD = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps\Chrome Remote Desktop.lnk"
 
 # Websites
 $global:YOUTUBE = "https://www.youtube.com/"

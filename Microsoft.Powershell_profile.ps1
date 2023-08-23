@@ -34,6 +34,12 @@ Function www {
   open "www.$esto"
 }
 
+function Get-ComObject {
+    Get-ChildItem HKLM:\Software\Classes -ErrorAction SilentlyContinue | Where-Object {
+            $_.PSChildName -match '^\w+\.\w+$' -and (Test-Path -Path "$($_.PSPath)\CLSID")
+    } | Select-Object -ExpandProperty PSChildName
+}
+
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
 # Be aware that if you are missing these lines from your profile, tab completion

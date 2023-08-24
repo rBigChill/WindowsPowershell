@@ -1,44 +1,12 @@
+#Function Prompt {"`n:)~ "}
+
 # Import modules...
 Import-Module $home\Documents\WindowsPowerShell\X
 Import-Module $home\Documents\WindowsPowerShell\github
+Import-Module $home\Documents\WindowsPowerShell\funcs
 
 # Start my threads
 Start-Job -FilePath $home\Documents\WindowsPowerShell\threads.ps1
-
-# Personal Functions
-Function off {shutdown /s /t 0}
-Function restart {Restart-Computer}
-Function su {start-process powershell -verb runas}
-Function ll($esto) {Get-ChildItem $esto -Force | more}
-#Function Prompt {"`n:)~ "}
-Function lf {Get-Command -Module X}
-Function cc {Set-Location $home}
-Function me {Set-Location "$home\Documents\WindowsPowerShell"}
-Function work {Set-Location "$home\OneDrive\Work"}
-
-Function open($esto) {Start-Process $esto}
-Function wait([int]$time) {Start-Sleep -Seconds $time}
-Function print($esto) {Write-Host $esto}
-Function printFile {
-    param(
-        [string]$esto
-    )
-    Get-Content $esto
-}
-
-# Open www website
-Function www {
-  param(
-      [string]$esto
-  )
-  open "www.$esto"
-}
-
-function Get-ComObject {
-    Get-ChildItem HKLM:\Software\Classes -ErrorAction SilentlyContinue | Where-Object {
-            $_.PSChildName -match '^\w+\.\w+$' -and (Test-Path -Path "$($_.PSPath)\CLSID")
-    } | Select-Object -ExpandProperty PSChildName
-}
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.

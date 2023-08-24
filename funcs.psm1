@@ -13,7 +13,8 @@ Function print($esto) {Write-Host $esto}
 Function printFile([string]$esto) {Get-Content $esto}
 Function www([string]$esto) {open "www.$esto"}
 Function Get-ComObject {
-    Get-ChildItem HKLM:\Software\Classes -ErrorAction SilentlyContinue | Where-Object {
-            $_.PSChildName -match '^\w+\.\w+$' -and (Test-Path -Path "$($_.PSPath)\CLSID")
-    } | Select-Object -ExpandProperty PSChildName
+    $file = Get-ChildItem HKLM:\Software\Classes -ErrorAction SilentlyContinue
+    $file | Where-Object {
+        $_.PSChildName -match '^\w+\.\w+$' -and (Test-Path -Path "$($_.PSPath)\CLSID")
+        } | Select-Object -ExpandProperty PSChildName
 }

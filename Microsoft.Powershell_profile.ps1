@@ -4,6 +4,7 @@
 Import-Module $home\Documents\WindowsPowerShell\X
 Import-Module $home\Documents\WindowsPowerShell\github
 Import-Module $home\Documents\WindowsPowerShell\funcs
+Import-Module $home\Documents\WindowsPowerShell\outlook
 
 # Start my threads
 Start-Job -FilePath $home\Documents\WindowsPowerShell\threads.ps1

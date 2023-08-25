@@ -9,6 +9,7 @@ function Send-Email {
     $mail.Subject = $subject
     $mail.Body = $body
     $mail.Send()
+    $outlook.Quit()
 }
 
 function Get-Meetings {
@@ -20,7 +21,7 @@ function Get-Meetings {
     $properties = @(
         'Subject',
         'Start',
-        'Duartion',
+        'Duration',
         'Location',
         'Body'
     )
@@ -31,4 +32,5 @@ function Get-Meetings {
     $calendar = $folder.Folders('Calendar')
     $meetings = $calendar.Items | Select-Object -Property $properties 
     $meetings | Where-Object {$_.Start.Month -eq $month -and $_.Start.Day -eq $day -and $_.Start.Year -eq $year}
+    $outlook.Quit()
 }

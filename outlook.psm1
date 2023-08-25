@@ -16,11 +16,19 @@ function Get-Meetings {
     $month = $today.Month
     $day = $today.Day
     $year = $today.Year
+
+    $properties = @(
+        'Subject',
+        'Start',
+        'Duartion',
+        'Location',
+        'Body'
+    )
     
     $outlook = New-Object -ComObject Outlook.Application
     $namespace = $outlook.GetNamespace('MAPI')
     $folder = $namespace.Folders('cisneros.jorge@outlook.com')
     $calendar = $folder.Folders('Calendar')
-    $meetings = $calendar.Items | Select-Object -Property Subject, Start, Duration, Location, Body
+    $meetings = $calendar.Items | Select-Object -Property $properties 
     $meetings | Where-Object {$_.Start.Month -eq $month -and $_.Start.Day -eq $day -and $_.Start.Year -eq $year}
 }

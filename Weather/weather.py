@@ -1,6 +1,5 @@
 import requests
 import json
-import settings
 import weatherCreds as c
 
 from twilio.rest import Client

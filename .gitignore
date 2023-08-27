@@ -1,3 +1,4 @@
 .gitignore
 Modules
 Scripts
+Weather/weatherCreds.py

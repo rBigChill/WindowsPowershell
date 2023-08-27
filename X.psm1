@@ -2,7 +2,7 @@
 Import-Module $home\Documents\WindowsPowerShell\Var
 
 # Longview Weather
-Function weather {python $HOME\Documents\WindowsPowershell\Weather\weather.py}
+Function weather {python $HOME\Documents\WindowsPowershell\Weather\printWeather.py}
 
 Function wifi {open($ROUTER)}
 

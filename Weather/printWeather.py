@@ -70,7 +70,6 @@ class Weather:
             self.responseObjects.append(r)
 
         self._printWeather()
-        #self._textWeather()
         
 if __name__ == "__main__":
     w = Weather()

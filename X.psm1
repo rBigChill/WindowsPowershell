@@ -2,7 +2,7 @@
 Import-Module $home\Documents\WindowsPowerShell\Var
 
 # Longview Weather
-Function weather {open($WEATHER)}
+Function weather {python $HOME\OneDrive\Work\TwitterBot\weather.py}
 
 Function wifi {open($ROUTER)}
 

@@ -1,8 +1,5 @@
 import requests
 import json
-import weatherCreds as c
-
-from twilio.rest import Client
 
 # daily response object
 class DailyWeatherResponse:
@@ -40,20 +37,6 @@ class Weather:
             message = f"{i.name:16}: {i.temperature:3}{i.temperatureUnit:2}~ {i.shortForecast}"
             print(message)
         print()
-
-    def _textWeather(self):
-        text = ""
-
-        for i in self.responseObjects:
-            message = f"{i.name:16}: {i.temperature:3}{i.temperatureUnit:2}~ {i.shortForecast}\n"
-            text += message
-
-        client = Client(c.ACCOUNT_SID, c.AUTO_TOKEN)
-        client.messages.create(
-          from_='+18556438832',
-          body=text,
-          to='+13103409148'
-        )
 
     # DailyRequest request daily weather
     def DailyRequest(self):

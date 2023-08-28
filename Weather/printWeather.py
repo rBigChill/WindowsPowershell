@@ -68,8 +68,12 @@ class Weather:
         if printType == 'd':
             print()
             for i in self.dailyObjects:
-                message = f"{i.name:16}:{i.temperature:4}{i.temperatureUnit:2}~ {i.shortForecast}"
-                print(message)
+                if i.isDaytime != False:
+                    message = f"{i.name:16}:{i.temperature:4}{i.temperatureUnit:2}~ {i.shortForecast}"
+                    print(message)
+                else:
+                    message = f"{'':16}:{i.temperature:4}{i.temperatureUnit:2}~ {i.shortForecast}"
+                    print(message)
             print()
         if printType == 'h':
             today = datetime.date.today()

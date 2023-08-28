@@ -68,7 +68,7 @@ class Weather:
         if printType == 'd':
             print()
             for i in self.dailyObjects:
-                if i.isDaytime != False:
+                if i.isDaytime == True:
                     message = f"{i.name:16}:{i.temperature:4}{i.temperatureUnit:2}~ {i.shortForecast}"
                     print(message)
                 else:

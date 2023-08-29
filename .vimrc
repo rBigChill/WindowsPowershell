@@ -33,4 +33,4 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-PlugUpdate | PlugUpgrade
+PlugUpdate | PlugUpgrade | :q!

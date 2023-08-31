@@ -21,7 +21,7 @@ set showmatch
 set hlsearch
 set history=1000
 set wildmenu
-set wildmenu=list:longest
+set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 set statusline=
 set statusline+=\ %F\ %M\ %Y\ %R
@@ -53,22 +53,23 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-PlugUpdate | PlugUpgrade | :q!
-
-let mapleader = "\"
+let mapleader = '\'
+nnoremap <leader>\ ``
 nnoremap <leader>\ :nohlsearch<CR>
 nnoremap <F5> :w <CR>:!clear <CR>:!python3 % <CR>
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-up> <c-w>+
-nnoremap <c-down> <c-w>-
-nnoremap <c-left> <c-w>>
-nnoremap <c-right> <c-w><
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-up> <C-w>+
+nnoremap <C-down> <C-w>-
+nnoremap <C-left> <C-w>>
+nnoremap <C-right> <C-w><
 nnoremap <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
+nnoremap <space> :
+nnoremap <space><space> ZZ
 
 inoremap jj <esc>
-inoremap <space> :
 
+PlugUpdate | PlugUpgrade | :q!

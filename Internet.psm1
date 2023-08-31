@@ -1,5 +1,5 @@
 # Import Variables module
-Import-Module $home\Documents\WindowsPowerShell\Var
+Import-Module $home\Documents\WindowsPowerShell\Variables
 
 # Longview Weather
 Function weather {python $HOME\Documents\WindowsPowershell\Weather\printWeather.py}
@@ -84,22 +84,5 @@ Function fav {
                 open $site; wait 1
             }
         }
-    }
-}
-
-# Open files
-Function finance {open $FINANCE}
-
-# Open Apps
-Function chrome {open $CHROME}
-Function outlook {open $OUTLOOK}
-Function onenote {open $ONENOTE}
-Function crd {open $CRD}
-
-# Startup
-Function leggo {
-    $apps = @($OUTLOOK, $ONENOTE)
-    foreach ($app in $apps) {
-        open $app; wait 1
     }
 }

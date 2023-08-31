@@ -1,4 +1,4 @@
-# Personal Functions
+# Personal Shell Functions
 Function off {shutdown /s /t 0}
 Function restart {Restart-Computer}
 Function su {start-process powershell -verb runas}
@@ -17,4 +17,18 @@ Function Get-ComObject {
     $file | Where-Object {
         $_.PSChildName -match '^\w+\.\w+$' -and (Test-Path -Path "$($_.PSPath)\CLSID")
         } | Select-Object -ExpandProperty PSChildName
+}
+# Open files
+Function finance {open $FINANCE}
+# Open Apps
+Function chrome {open $CHROME}
+Function outlook {open $OUTLOOK}
+Function onenote {open $ONENOTE}
+Function crd {open $CRD}
+# Startup
+Function leggo {
+    $apps = @($OUTLOOK, $ONENOTE)
+    foreach ($app in $apps) {
+        open $app; wait 1
+    }
 }

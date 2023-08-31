@@ -68,6 +68,8 @@ nnoremap <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
 nnoremap <space> :
 nnoremap <space><space> ZZ
+nnoremap o o<esc>
+nnoremap O O<esc>
 
 inoremap jj <esc>
 

@@ -14,19 +14,10 @@ function Send-Email {
 function Get-Meetings {
     $rangeStart = [DateTime]::Now
     $rangeEnd = [DateTime]::Now.AddDays(7)
-
-    $properties = @(
-        'Subject',
-        'Start',
-        'Duration',
-        'Location',
-        'Body'
-    )
     
     $outlook = New-Object -ComObject Outlook.Application
     $namespace = $outlook.GetNamespace('MAPI')
     $folder = $namespace.Folders('cisneros.jorge@outlook.com')
-
     $calendar = $folder.Folders('Calendar').Items
     $calendar.Sort("Start")
     $calendar.IncludeRecurrences = $true
@@ -36,6 +27,7 @@ function Get-Meetings {
     $meetings = $calendar.Restrict($restriction)
 
     foreach($appt in $meetings) {
-        "{0:MM/dd hh:mm tt} - {1:MM/dd hh:mm tt} : {2}" -f [DateTime]$appt.Start, [DateTime]$appt.End, $appt.Subject
+        "`n{0:MM/dd ~ hh:mmtt}-{1:hh:mmtt}`n`t{2}" -f [DateTime]$appt.Start, [DateTime]$appt.End, $appt.Subject
     }
+    Write-Host ""
 }

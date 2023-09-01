@@ -53,10 +53,14 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
+let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
 let mapleader = '\'
-nnoremap <leader>\ ``
 nnoremap <leader>\ :nohlsearch<CR>
-nnoremap <F5> :w <CR>:!clear <CR>:!python3 % <CR>
+
+nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F5> :w <CR>:!py % <CR>
+
+nnoremap <C-w> <C-w>v
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
@@ -65,10 +69,11 @@ nnoremap <C-up> <C-w>+
 nnoremap <C-down> <C-w>-
 nnoremap <C-left> <C-w>>
 nnoremap <C-right> <C-w><
-nnoremap <F3> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
+
 nnoremap <space> :
+nnoremap <space>w :w<CR>
 nnoremap <space><space> ZZ
+
 nnoremap o o<esc>
 nnoremap O O<esc>
 

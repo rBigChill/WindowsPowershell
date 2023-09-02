@@ -5,8 +5,8 @@ syntax on
 set number
 set cursorline
 hi cursorline ctermbg=DarkGray
+hi cursorline ctermfg=white
 hi cursorlinenr ctermbg=DarkGray
-hi cursorlinenr ctermfg=white
 set cursorcolumn
 set shiftwidth=4
 set tabstop=4

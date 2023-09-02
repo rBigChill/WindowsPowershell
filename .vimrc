@@ -6,6 +6,7 @@ set number
 set cursorline
 hi cursorline ctermbg=DarkGray
 hi cursorlinenr ctermbg=DarkGray
+hi cursorlinenr ctermfg=white
 set cursorcolumn
 set shiftwidth=4
 set tabstop=4

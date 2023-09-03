@@ -11,7 +11,7 @@ function Send-Email {
     $mail.Send()
 }
 
-function Get-Meetings {
+function meet{
     $rangeStart = [DateTime]::Now
     $rangeEnd = [DateTime]::Now.AddDays(7)
     

@@ -3,6 +3,9 @@ Import-Module $home\Documents\WindowsPowerShell\Variables
 
 # Longview Weather
 Function weather {python $HOME\OneDrive\Work\Weather\printWeather.py}
+function reddit {python $HOME\OneDrive\Work\Reddit\Reddit.py}
+function hacker {python $HOME\OneDrive\Work\HackerNews\hackerNews.py}
+function news {Start-Process -NoNewWindow $HOME\OneDrive\Work\News\main\main.exe}
 
 Function wifi {open($ROUTER)}
 

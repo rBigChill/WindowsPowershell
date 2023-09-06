@@ -74,6 +74,7 @@ nnoremap <C-right> <C-w><
 nnoremap <space> :
 nnoremap <space>w :w<CR>
 nnoremap <space><space> ZZ
+nnoremap <space>q :q!<CR>
 
 nnoremap o o<esc>
 nnoremap O O<esc>

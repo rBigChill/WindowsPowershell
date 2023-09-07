@@ -66,8 +66,8 @@ Function fav {
         [switch]$s,
         [switch]$n
     )
-    $social = @($TIK, $INSTA, $FACE, $LINKED)
-    $news = @($GITHUB, $HN, $DEV, $REDDIT, $GNEWS, $YNEWS)
+    $social = @($YOUTUBE, $TIK, $INSTA, $FACE, $LINKED)
+    $news = @($HN, $DEV, $REDDIT, $GNEWS, $YNEWS)
     
     switch ($true) {
         $s {

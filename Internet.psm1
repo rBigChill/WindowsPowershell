@@ -1,7 +1,7 @@
 # Import Variables module
 Import-Module $home\Documents\WindowsPowerShell\Variables
 
-# Longview Weather
+# Weather
 Function weather {python $HOME\OneDrive\Work\Weather\printWeather.py}
 function reddit {python $HOME\OneDrive\Work\Reddit\Reddit.py}
 function hacker {python $HOME\OneDrive\Work\HackerNews\hackerNews.py}
@@ -60,7 +60,7 @@ Function black {
 Function fav {
     <#
     .Description
-    -choice is s = social or n = news. Default is all 
+    -choice are s = social or n = news. Default is all 
     #>
     param(
         [switch]$s,

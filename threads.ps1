@@ -7,9 +7,9 @@ Function ItIs($hour, $min){
 }
 
 while ($true) {
-	if (ItIs 8 55){
+	if (ItIs 13 21){
 		Write-Host Fuck Yes!!
-		Start-Sleep 60
+		Start-Sleep -Seconds 1 
 	}
 	else {
 		Start-Sleep -Seconds 1

@@ -26,8 +26,9 @@ function meet{
 
     $meetings = $calendar.Restrict($restriction)
 
+    Write-Host ""
     foreach($appt in $meetings) {
-        "`n{0:MM/dd ~ hh:mmtt}-{1:hh:mmtt}`n`t{2}" -f [DateTime]$appt.Start, [DateTime]$appt.End, $appt.Subject
+        "{0:MM/dd ~ hh:mmtt}-{1:hh:mmtt}: {2}" -f [DateTime]$appt.Start, [DateTime]$appt.End, $appt.Subject
     }
     Write-Host ""
 }

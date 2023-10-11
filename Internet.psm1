@@ -6,7 +6,14 @@ Function weather {python $HOME\OneDrive\Work\Weather\printWeather.py}
 function reddit {python $HOME\OneDrive\Work\Reddit\Reddit.py}
 function hacker {python $HOME\OneDrive\Work\HackerNews\hackerNews.py}
 function newsapi {Start-Process -NoNewWindow $HOME\OneDrive\Work\News\main\main.exe}
-function news {reddit; hacker; newsapi}
+function news {
+    Write-Host "`n*** Reddit ***`n"
+    reddit
+    Write-Host "`n*** HN ***`n"
+    hacker
+    Write-Host "`n*** Top 10 ***`n"
+    newsapi
+}
 
 Function wifi {open($ROUTER)}
 

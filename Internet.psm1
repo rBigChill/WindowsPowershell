@@ -88,10 +88,10 @@ Function fav {
             }
         } 
         Default {
-            foreach ($site in $social) {
+            foreach ($site in $news) {
                 open $site; wait 1
             } 
-            foreach ($site in $news) {
+            foreach ($site in $social) {
                 open $site; wait 1
             }
         }

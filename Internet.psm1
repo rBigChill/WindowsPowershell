@@ -88,7 +88,7 @@ Function fav {
             }
         } 
         Default {
-            open $YOUTUBE
+            open $YOUTUBE; wait 1
             foreach ($site in $news) {
                 open $site; wait 1
             } 

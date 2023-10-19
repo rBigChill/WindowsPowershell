@@ -73,8 +73,8 @@ Function fav {
         [switch]$s,
         [switch]$n
     )
-    $social = @($YOUTUBE, $INSTA, $FACE, $LINKED)
-    $news = @($HN, $REDDIT, $GNEWS, $YNEWS)
+    $social = @($INSTA, $FACE, $LINKED)
+    $news = @($HN, $REDDIT, $YNEWS, $GNEWS)
     
     switch ($true) {
         $s {
@@ -88,6 +88,7 @@ Function fav {
             }
         } 
         Default {
+            open $YOUTUBE
             foreach ($site in $news) {
                 open $site; wait 1
             } 

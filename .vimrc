@@ -81,4 +81,5 @@ nnoremap O O<esc>
 
 inoremap jj <esc>
 
-PlugUpdate | PlugUpgrade | :q!
+PlugUpdate
+PlugUpgrade

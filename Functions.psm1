@@ -10,7 +10,7 @@ Function work {Set-Location "$home\OneDrive\Work"}
 Function open($esto) {Start-Process $esto}
 Function wait([int]$time) {Start-Sleep -Seconds $time}
 Function www([string]$esto) {open "www.$esto"}
-Function Get-ComObject {
+Function objects {
     $file = Get-ChildItem HKLM:\Software\Classes -ErrorAction SilentlyContinue
     $file | Where-Object {
         $_.PSChildName -match '^\w+\.\w+$' -and (Test-Path -Path "$($_.PSPath)\CLSID")

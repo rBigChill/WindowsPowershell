@@ -80,6 +80,3 @@ nnoremap o o<esc>
 nnoremap O O<esc>
 
 inoremap jj <esc>
-
-PlugUpdate
-PlugUpgrade

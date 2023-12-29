@@ -25,7 +25,7 @@ Function onenote {open $ONENOTE}
 Function crd {open $CRD}
 # Startup
 Function leggo {
-    $apps = @($OUTLOOK, $ONENOTE)
+    $apps = @($OUTLOOK, $ONENOTE, $CHROME)
     foreach ($app in $apps) {
         open $app; wait 1
     }

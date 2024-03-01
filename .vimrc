@@ -3,11 +3,6 @@ filetype plugin on
 filetype indent on
 syntax on
 set number
-#set cursorline
-#hi cursorline ctermbg=DarkGray
-#hi cursorline ctermfg=white
-#hi cursorlinenr ctermbg=DarkGray
-#set cursorcolumn
 set shiftwidth=4
 set tabstop=4
 set expandtab

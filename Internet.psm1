@@ -58,11 +58,6 @@ Function youtube {
     }
 }
 
-# Open Blackboard
-Function black {
-    open "https://kilgore.blackboard.com"
-}
-
 # Open Fav websites
 Function fav {
     <#
@@ -73,7 +68,7 @@ Function fav {
         [switch]$s,
         [switch]$n
     )
-    $social = @($INSTA, $FACE, $LINKED)
+    $social = @($INSTA, $FACE)
     $news = @($REDDIT, $GNEWS)
     
     switch ($true) {

@@ -5,7 +5,7 @@ Import-Module $home\Documents\WindowsPowerShell\Variables
 Function weather {python $HOME\OneDrive\Work\Weather\printWeather.py}
 function reddit {python $HOME\OneDrive\Work\Reddit\Reddit.py}
 function hacker {python $HOME\OneDrive\Work\HackerNews\hackerNews.py}
-function newsapi {Start-Process -NoNewWindow $HOME\OneDrive\Work\News\main\main.exe}
+function newsapi {python $HOME\OneDrive\Work\NewsAPI\NewsAPI.py}
 function news {
     Write-Host "`n*** Reddit ***`n"
     reddit

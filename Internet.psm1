@@ -7,11 +7,8 @@ function reddit {python $HOME\OneDrive\Work\Reddit\Reddit.py}
 function hacker {python $HOME\OneDrive\Work\HackerNews\hackerNews.py}
 function newsapi {python $HOME\OneDrive\Work\NewsAPI\NewsAPI.py}
 function news {
-    Write-Host "`n*** Reddit ***`n"
     reddit
-    Write-Host "`n*** HN ***`n"
     hacker
-    Write-Host "`n*** Top 10 ***`n"
     newsapi
 }
 

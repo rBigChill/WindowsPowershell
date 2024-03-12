@@ -15,4 +15,8 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 # Update Chocolatey
-function update {choco upgrade all -y}
+function update {
+    choco upgrade all -y
+    wsl --update
+    wsl
+}

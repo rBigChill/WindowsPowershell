@@ -62,7 +62,7 @@ Function fav {
     -choice are s = social or n = news. Default is all 
     #>
     param(
-        [switch]$s,
+        [switch]$s
         #[switch]$n
     )
     $social = @($YOUTUBE, $INSTA, $FACE, $LINKED)

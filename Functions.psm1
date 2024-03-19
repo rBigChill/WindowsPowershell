@@ -30,3 +30,9 @@ Function leggo {
         open $app; wait 1
     }
 }
+
+# Start Minecraft server
+Function mine {
+    cd $HOME\Minecraft
+    java -jar server.jar --nogui
+}

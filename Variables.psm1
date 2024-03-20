@@ -21,6 +21,7 @@ $global:TEXT = "C:\Users\cisne\AppData\Roaming\Microsoft\Windows\Start Menu\Prog
 # Websites
 $global:YOUTUBE = "https://www.youtube.com/"
 $global:YTSEARCH = "$YOUTUBE/results?search_query="
+$global:YMUSIC = "https://music.youtube.com/"
 $global:GITHUB = "https://github.com/"
 $global:INSTA = "https://www.instagram.com"
 $global:FACE = "https://www.facebook.com"

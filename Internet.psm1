@@ -3,10 +3,10 @@ Import-Module $home\Documents\WindowsPowerShell\Variables
 
 # Weather
 Function weather {python $HOME\OneDrive\Work\Weather\printWeather.py}
-function reddit {python $HOME\OneDrive\Work\Reddit\Reddit.py}
-function hacker {python $HOME\OneDrive\Work\HackerNews\hackerNews.py}
-function newsapi {python $HOME\OneDrive\Work\NewsAPI\NewsAPI.py}
-function news {
+Function reddit {python $HOME\OneDrive\Work\Reddit\Reddit.py}
+Function hacker {python $HOME\OneDrive\Work\HackerNews\hackerNews.py}
+Function newsapi {python $HOME\OneDrive\Work\NewsAPI\NewsAPI.py}
+Function news {
     reddit
     hacker
     newsapi
@@ -59,13 +59,15 @@ Function youtube {
 Function fav {
     <#
     .Description
-    -choice are s = social or n = news. Default is all 
+    -choice are s = social or o = other. Default is all 
     #>
     param(
-        [switch]$s
-        #[switch]$n
+        [switch]$s,
+
+        [switch]$o
     )
-    $social = @($YOUTUBE, $INSTA, $FACE, $LINKED)
+    $social = @($INSTA, $FACE, $LINKED)
+    $other = @($YMUSIC, $YOUTUBE)
     
     switch ($true) {
         $s {
@@ -73,13 +75,13 @@ Function fav {
                 open $site; wait 1
             }
         } 
-        <#$n {
-            foreach ($site in $news) {
+        $o {
+            foreach ($site in $other) {
                 open $site; wait 1
             }
         }#>
         Default {
-            foreach ($site in $news) {
+            foreach ($site in $other) {
                 open $site; wait 1
             } 
             foreach ($site in $social) {

@@ -1,4 +1,4 @@
-#Function Prompt {"`n:)~ "}
+Function Prompt {"`n:)~ "}
 #
 # Import modules...
 Import-Module $home\Documents\WindowsPowerShell\Internet

@@ -1,4 +1,4 @@
-function prompt {"`n:)~`t $(get-location)`t~(:`n`n >"}
+function prompt {"`n:)~`t $(get-location)`t~(:`n`n > "}
 
 # Import modules...
 Import-Module $home\Documents\WindowsPowerShell\Internet

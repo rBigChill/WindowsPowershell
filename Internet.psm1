@@ -63,10 +63,9 @@ Function fav {
     #>
     param(
         [switch]$s,
-
         [switch]$o
     )
-    $social = @($INSTA, $FACE)
+    $social = @($REDDIT, $TWITTER, $FACE, $INSTA)
     $other = @($YMUSIC, $YOUTUBE)
     
     switch ($true) {
@@ -79,7 +78,7 @@ Function fav {
             foreach ($site in $other) {
                 open $site; wait 1
             }
-        }#>
+        }
         Default {
             foreach ($site in $other) {
                 open $site; wait 1

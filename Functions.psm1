@@ -21,6 +21,7 @@ Function objects {
 Function finance {open $FINANCE}
 
 # Open Apps
+Function edge {open $EDGE}
 Function chrome {open $CHROME}
 Function outlook {open $OUTLOOK}
 Function onenote {open $ONENOTE}

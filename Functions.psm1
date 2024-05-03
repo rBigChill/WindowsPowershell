@@ -16,13 +16,16 @@ Function objects {
         $_.PSChildName -match '^\w+\.\w+$' -and (Test-Path -Path "$($_.PSPath)\CLSID")
         } | Select-Object -ExpandProperty PSChildName
 }
+
 # Open files
 Function finance {open $FINANCE}
+
 # Open Apps
 Function chrome {open $CHROME}
 Function outlook {open $OUTLOOK}
 Function onenote {open $ONENOTE}
 Function crd {open $CRD}
+
 # Startup
 Function leggo {
     $apps = @($OUTLOOK, $ONENOTE)

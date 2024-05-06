@@ -28,7 +28,7 @@ function meet{
 
     Write-Host ""
     foreach($appt in $meetings) {
-        "{0:MM/dd ~ hh:mmtt}-{1:hh:mmtt}: {2}" -f [DateTime]$appt.Start, [DateTime]$appt.End, $appt.Subject
+        "{0:ddd: MM/dd: HH:mm}-{1:HH:mm}: {2}" -f [DateTime]$appt.Start, [DateTime]$appt.End, $appt.Subject
     }
     Write-Host ""
 }

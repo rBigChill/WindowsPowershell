@@ -46,6 +46,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'mattn/emmet-vim'
     Plug 'vim-syntastic/syntastic'
     Plug 'valloric/youcompleteme'
+    Plug 'pprovost/vim-ps1'
 
 call plug#end()
 

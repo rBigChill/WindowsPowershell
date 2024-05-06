@@ -16,6 +16,13 @@ Function objects {
         $_.PSChildName -match '^\w+\.\w+$' -and (Test-Path -Path "$($_.PSPath)\CLSID")
         } | Select-Object -ExpandProperty PSChildName
 }
+Function link {
+    param(
+        [string]$path,
+        [string]$target
+    )
+    New-Item -ItemType SymbolicLink -Path $path -Target $target
+}
 
 # Open files
 Function finance {open $FINANCE}

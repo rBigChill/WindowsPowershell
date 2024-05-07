@@ -1,4 +1,3 @@
-#function prompt {"`n:)~`t $(get-location)`t~(:`n`n > "}
 function prompt {"`n$(get-location)`n`n:)~ "}
 
 # Import modules...

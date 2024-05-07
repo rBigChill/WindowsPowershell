@@ -1,3 +1,5 @@
+Add-Type -AssemblyName PresentationFramework
+
 Function ItIs($hour, $min){
 	$now = Get-Date
 	if ($now.Hour -eq $hour -and $now.Minute -eq $min) {
@@ -7,12 +9,8 @@ Function ItIs($hour, $min){
 }
 
 while ($true) {
-	if (ItIs 11 25){
-        Write-Host "Working..."
-		Start-Sleep -Seconds 60 
-	}
-	else {
-		Start-Sleep -Seconds 1
-	}
+    Switch ($true) {
+        (ItIs 17 00) {[System.Windows.MessageBox]::Show("Working..."); Start-Sleep -Seconds 60}
+    }
 }
 

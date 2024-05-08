@@ -7,6 +7,11 @@ Import-Module $home\Documents\WindowsPowerShell\Functions
 Import-Module $home\Documents\WindowsPowerShell\Outlook
 Import-Module $home\Documents\WindowsPowerShell\Work
 
+# Pull the most recent files from github for profile
+cd $home\Documents\WindowsPowerShell\
+pull
+cc
+
 # Start my threads
 #Start-Job -FilePath $home\Documents\WindowsPowerShell\Threads.ps1
 

@@ -13,4 +13,3 @@ while ($true) {
         (ItIs 17 00) {[System.Windows.MessageBox]::Show("Working..."); Start-Sleep -Seconds 60}
     }
 }
-

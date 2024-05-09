@@ -2,7 +2,7 @@ Function count {
     while ((Get-Date -Format "HH") -ne "17") {
         Clear
         Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)
-        #Start-Sleep -Seconds 1
+        Start-Sleep -Seconds 1
     }
 }
 

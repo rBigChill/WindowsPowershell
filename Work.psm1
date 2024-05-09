@@ -28,3 +28,11 @@ Function here {
         }
     }
 }
+
+Function out {
+    param(
+        [int]$id
+    )
+    Stop-Job -ID $id
+    Remove-Job -ID $id
+}

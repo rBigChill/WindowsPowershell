@@ -52,6 +52,7 @@ call plug#end()
 
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
 let mapleader = '\'
+
 nnoremap <leader>\ :nohlsearch<CR>
 
 nnoremap <F3> :NERDTreeToggle<CR>

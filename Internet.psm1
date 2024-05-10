@@ -14,6 +14,41 @@ Function news {
 
 Function wifi {open($ROUTER)}
 
+# Open Fav websites
+Function fav {
+    <#
+    .Description
+    -choice are s = social or o = other. Default is all 
+    #>
+    param(
+        [switch]$s,
+        [switch]$o
+    )
+    $social = @($LINKED, $FACE, $INSTA)
+    $other = @($YMUSIC, $YOUTUBE)
+    
+    switch ($true) {
+        $s {
+            foreach ($site in $social) {
+                open $site; wait 1
+            }
+        } 
+        $o {
+            foreach ($site in $other) {
+                open $site; wait 1
+            }
+        }
+        Default {
+            foreach ($site in $other) {
+                open $site; wait 1
+            } 
+            foreach ($site in $social) {
+                open $site; wait 1
+            }
+        }
+    }
+}
+
 # Google search
 Function google {
     <#
@@ -52,40 +87,5 @@ Function youtube {
         open $YOUTUBE
     }else{
         open "$YTSEARCH$esto"
-    }
-}
-
-# Open Fav websites
-Function fav {
-    <#
-    .Description
-    -choice are s = social or o = other. Default is all 
-    #>
-    param(
-        [switch]$s,
-        [switch]$o
-    )
-    $social = @($TIK, $LINKED, $TWITTER, $FACE, $INSTA)
-    $other = @($YMUSIC)
-    
-    switch ($true) {
-        $s {
-            foreach ($site in $social) {
-                open $site; wait 1
-            }
-        } 
-        $o {
-            foreach ($site in $other) {
-                open $site; wait 1
-            }
-        }
-        Default {
-            foreach ($site in $other) {
-                open $site; wait 1
-            } 
-            foreach ($site in $social) {
-                open $site; wait 1
-            }
-        }
     }
 }

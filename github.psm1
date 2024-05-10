@@ -1,6 +1,3 @@
-# Import Variables module
-Import-Module $home\Documents\WindowsPowerShell\Variables
-
 # Open github
 Function github {open($GITHUB)}
 

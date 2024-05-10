@@ -1,6 +1,3 @@
-# Import Variables module
-Import-Module $home\Documents\WindowsPowerShell\Variables
-
 # Weather
 Function weather {python $HOME\OneDrive\Work\Weather\printWeather.py}
 Function reddit {python $HOME\OneDrive\Work\Reddit\Reddit.py}

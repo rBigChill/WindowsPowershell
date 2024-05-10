@@ -1,3 +1,4 @@
+#
 # Personal Shell Functions
 Function off {shutdown /s /t 0}
 Function restart {Restart-Computer}

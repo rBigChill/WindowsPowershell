@@ -12,6 +12,8 @@ function Send-Email {
 }
 
 function day{
+    Date
+
     # Grab Today
     $rangeStart = [DateTime]::Now.Date
     $rangeEnd = [DateTime]::Now.Date.AddHours(24)

@@ -22,7 +22,7 @@ Function fav {
         [switch]$o
     )
     $social = @($LINKED, $FACE, $INSTA)
-    $VIDEO = @($YMUSIC, $YOUTUBE, $FANATICS, $UDEMY)
+    $other = @($YMUSIC, $YOUTUBE, $FANATICS, $UDEMY)
     
     switch ($true) {
         $s {

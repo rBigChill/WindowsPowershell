@@ -2,6 +2,7 @@
 # Personal Shell Functions
 Function off {shutdown /s /t 0}
 Function restart {Restart-Computer}
+Function lock {rundll32.exe user32.dll,LockWorkStation}
 Function bin {Clear-Recyclebin -Force}
 Function su {start-process powershell -verb runas}
 Function ll($esto) {Get-ChildItem $esto -Force | more}

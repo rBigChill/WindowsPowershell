@@ -1,12 +1,14 @@
-Function count {
+Function here {
+    script
     while ((Get-Date -Format "HH") -ne "17") {
         Clear
         Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)
         Start-Sleep -Seconds 1
     }
+    out
 }
 
-Function here {
+Function script {
     Start-Job -ScriptBlock {
 
         Add-Type -AssemblyName PresentationFramework
@@ -23,7 +25,7 @@ Function here {
             Switch ($true) {
                 (ItIs 12 00) {[System.Windows.MessageBox]::Show("LUNCH"); Start-Sleep -Seconds 60}
                 (ItIs 16 55) {[System.Windows.MessageBox]::Show("GET READY TO LEAVE"); Start-Sleep -Seconds 60}
-                (ItIs 17 00) {[System.Windows.MessageBox]::Show("GO HOME"); Start-Sleep -Seconds 60}
+                (ItIs 16 59) {[System.Windows.MessageBox]::Show("GO HOME"); Start-Sleep -Seconds 60}
             }
             Start-Sleep -Seconds 1
         }
@@ -31,9 +33,9 @@ Function here {
 }
 
 Function out {
-    param(
-        [int]$id
-    )
-    Stop-Job -ID $id
-    Remove-Job -ID $id
+    $job = Get-Job
+    foreach ($jobNumber in $job) {
+        Stop-Job -ID $jobNumber.Id
+        Remove-Job -ID $jobNumber.Id
+    }
 }

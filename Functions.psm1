@@ -1,4 +1,3 @@
-#
 # Personal Shell Functions
 Function off {shutdown /s /t 0}
 Function restart {Restart-Computer}
@@ -32,7 +31,19 @@ Function finance {open $FINANCE}
 
 # Open Apps
 Function edge {open $EDGE}
-Function chrome {open $CHROME}
+Function chrome {
+    param(
+        [switch]$n
+    )
+    switch($true) {
+        $n {
+            open $CHROME --new-window 
+        }
+        Default {
+            open $CHROME}
+        }
+}
+    
 Function outlook {open $OUTLOOK}
 Function onenote {open $ONENOTE}
 Function crd {open $CRD}

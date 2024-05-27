@@ -46,6 +46,13 @@ Function fav {
     }
 }
 
+Function sound {
+    $sound = @($YMUSIC, $YOUTUBE, $TIK)
+    foreach ($site in $sound) {
+        open $site; wait 1
+    }
+}
+
 # Google search
 Function google {
     <#

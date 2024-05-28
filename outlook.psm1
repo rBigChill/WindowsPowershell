@@ -9,6 +9,7 @@ function Send-Email {
     $mail.Subject = $subject
     $mail.Body = $body
     $mail.Send()
+    #$outlook.Quit()
 }
 
 function day{

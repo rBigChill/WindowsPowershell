@@ -48,7 +48,6 @@ Function fav {
 
 Function sound {
     $sound = @($YMUSIC, $YOUTUBE, $TIK)
-    open chrome.exe --new-window
     foreach ($site in $sound) {
         open $site; wait 1
     }

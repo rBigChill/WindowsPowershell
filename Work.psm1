@@ -23,9 +23,10 @@ Function script {
 
         while ($true) {
             Switch ($true) {
+                (ItIs 11 55) {[System.Windows.MessageBox]::Show("WORKING OUT?"); Start-Sleep -Seconds 60}
                 (ItIs 12 00) {[System.Windows.MessageBox]::Show("LUNCH"); Start-Sleep -Seconds 60}
                 (ItIs 16 55) {[System.Windows.MessageBox]::Show("GET READY TO LEAVE"); Start-Sleep -Seconds 60}
-                (ItIs 16 59) {[System.Windows.MessageBox]::Show("GO HOME"); Start-Sleep -Seconds 60}
+                (ItIs 17 00) {[System.Windows.MessageBox]::Show("GO HOME"); Start-Sleep -Seconds 60}
             }
             Start-Sleep -Seconds 1
         }

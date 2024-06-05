@@ -55,6 +55,7 @@ Function timer {
     param(
         [int]$time
     )
+    Add-Type -AssemblyName PresentationFramework
     $min = $time * 60
     while ($min -gt 0) {
         Clear
@@ -64,5 +65,5 @@ Function timer {
         Start-Sleep -Seconds 1
     }
     Clear
-    Write-Host "Done!"
+    [System.Windows.MessageBox]::Show("Timers Done!")
 }

@@ -55,11 +55,14 @@ Function timer {
     param(
         [int]$time
     )
-    while ($time -ge 0) {
+    $min = $time * 60
+    while ($min -gt 0) {
         Clear
-        Write-Host -NoNewLine `r$time
-        $time--
+        $var = [math]::Ceiling($min / 60)
+        Write-Host -NoNewLine `r$var Minutes
+        $min--
         Start-Sleep -Seconds 1
     }
     Clear
+    Write-Host "Done!"
 }

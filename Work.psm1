@@ -6,6 +6,7 @@ Function here {
         Start-Sleep -Seconds 1
     }
     out
+    exit
 }
 
 Function script {
@@ -39,4 +40,8 @@ Function out {
         Stop-Job -ID $jobNumber.Id
         Remove-Job -ID $jobNumber.Id
     }
+}
+
+Function Get-Computers {
+    get-adcomputer -Filter * | select-object Name | sort Name
 }

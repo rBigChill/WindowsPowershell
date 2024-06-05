@@ -50,3 +50,16 @@ Function mine {
     cd $HOME\Minecraft
     java -jar server.jar --nogui
 }
+
+Function timer {
+    param(
+        [int]$time
+    )
+    while ($time -ge 0) {
+        Clear
+        Write-Host -NoNewLine `r$time
+        $time--
+        Start-Sleep -Seconds 1
+    }
+    Clear
+}

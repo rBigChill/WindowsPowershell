@@ -64,6 +64,6 @@ Function timer {
         $min--
         Start-Sleep -Seconds 1
     }
-    Clear
     [System.Windows.MessageBox]::Show("Timers Done!")
+    Clear
 }

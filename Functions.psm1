@@ -2,7 +2,7 @@
 Function off {shutdown /s /t 0}
 Function restart {Restart-Computer}
 Function cpu {ps | sort -Descending CPU | more}
-Function lock {rundll32.exe user32.dll,LockWorkStation}
+Function lock {clear; rundll32.exe user32.dll,LockWorkStation}
 Function bin {Clear-Recyclebin -Force}
 Function su {start-process powershell -verb runas}
 Function ll($esto) {Get-ChildItem $esto -Force | more}

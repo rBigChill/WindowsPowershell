@@ -67,3 +67,11 @@ Function timer {
     [System.Windows.MessageBox]::Show("Timers Done!")
     Clear
 }
+
+Function clock {
+    while ($true) {
+        Clear
+        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)
+        Start-Sleep -Seconds 1
+    }
+}

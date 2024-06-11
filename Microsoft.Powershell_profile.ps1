@@ -14,7 +14,7 @@ pull
 cc
 
 # Start my threads
-Start-Job -FilePath $home\Documents\WindowsPowerShell\Threads.ps1
+#Start-Job -FilePath $home\Documents\WindowsPowerShell\Threads.ps1
 
 # Chocolatey autocomplete
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"

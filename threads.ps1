@@ -1,3 +1,5 @@
+# Threads
+
 Add-Type -AssemblyName PresentationFramework
 
 Function ItIs($hour, $min){
@@ -10,6 +12,7 @@ Function ItIs($hour, $min){
 
 while ($true) {
     Switch ($true) {
-        (ItIs 17 00) {[System.Windows.MessageBox]::Show("Working..."); Start-Sleep -Seconds 60}
+        (ItIs 21 00) {[System.Windows.MessageBox]::Show("Stop Working"); Start-Sleep -Seconds 60}
     }
+    Start-Sleep -Seconds 1
 }

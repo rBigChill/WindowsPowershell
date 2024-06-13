@@ -1,7 +1,7 @@
 Function here {
     script
+    Clear
     while ((Get-Date -Format "HH:mm") -ne "17:01") {
-        Clear
         Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)
         Start-Sleep -Seconds 1
     }

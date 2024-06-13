@@ -48,5 +48,6 @@ Function Get-Computers {
 }
 
 Function ut {
-    new-timespan -start (get-computerinfo).OsLastBootUpTime -end (get-computerinfo).OsLocalDateTime
+    $info = get-computerinfo
+    new-timespan -start $info.OsLastBootUpTime -end $info.OsLocalDateTime
 }

@@ -58,8 +58,8 @@ Function timer {
     )
     Add-Type -AssemblyName PresentationFramework
     $min = $time * 60
+    Clear
     while ($min -gt 0) {
-        Clear
         $var = [math]::Ceiling($min / 60)
         Write-Host -NoNewLine `r$var Minutes
         $min--
@@ -70,8 +70,8 @@ Function timer {
 }
 
 Function clock {
+    Clear
     while ($true) {
-        Clear
         Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)
         Start-Sleep -Seconds 1
     }

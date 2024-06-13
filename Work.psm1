@@ -46,3 +46,7 @@ Function out {
 Function Get-Computers {
     get-adcomputer -Filter * | select-object Name | sort Name
 }
+
+Function ut {
+    new-timespan -start (get-computerinfo).OsLastBootUpTime -end (get-computerinfo).OsLocalDateTime
+}

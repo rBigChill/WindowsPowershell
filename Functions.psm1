@@ -36,6 +36,7 @@ Function chrome {open $CHROME}
 Function outlook {open $OUTLOOK}
 Function onenote {open $ONENOTE}
 Function crd {open $CRD}
+Function text {open $TEXT}
 
 # Startup
 Function leggo {

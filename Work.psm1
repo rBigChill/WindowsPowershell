@@ -1,14 +1,3 @@
-Function here {
-    script
-    Clear
-    while ((Get-Date -Format "HH:mm") -ne "17:01") {
-        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)
-        Start-Sleep -Seconds 1
-    }
-    out
-    exit
-}
-
 Function script {
     Start-Job -ScriptBlock {
 
@@ -33,6 +22,17 @@ Function script {
             Start-Sleep -Seconds 1
         }
     }
+}
+
+Function here {
+    script
+    Clear
+    while ((Get-Date -Format "HH:mm") -ne "17:01") {
+        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)
+        Start-Sleep -Seconds 1
+    }
+    out
+    exit
 }
 
 Function out {

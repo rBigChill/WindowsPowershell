@@ -47,7 +47,7 @@ Function fav {
 }
 
 Function sound {
-    $sound = @($YMUSIC, $YOUTUBE, $TIK)
+    $sound = @($YMUSIC, $YOUTUBE)
     foreach ($site in $sound) {
         open $site; wait 1
     }

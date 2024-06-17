@@ -68,7 +68,7 @@ Function timer {
     Clear
 }
 
-Function clock {
+Function dash {
     Clear
     while ($true) {
         Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)

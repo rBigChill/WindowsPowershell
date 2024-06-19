@@ -56,7 +56,6 @@ let mapleader = '\'
 nnoremap <leader>\ :nohlsearch<CR>
 
 nnoremap <F3> :NERDTreeToggle<CR>
-nnoremap <F5> :w <CR>:!py % <CR>
 
 nnoremap <C-w> <C-w>v
 nnoremap <C-j> <C-w>j
@@ -68,7 +67,6 @@ nnoremap <C-down> <C-w>-
 nnoremap <C-left> <C-w>>
 nnoremap <C-right> <C-w><
 
-nnoremap <space> :
 nnoremap <space>w :w<CR>
 nnoremap <space><space> ZZ
 nnoremap <space>q :q!<CR>

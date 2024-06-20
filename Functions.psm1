@@ -5,18 +5,12 @@ Function cpu {ps | sort -Descending CPU | more}
 Function lock {clear; rundll32.exe user32.dll,LockWorkStation}
 Function bin {Clear-Recyclebin -Force}
 Function su {start-process powershell -verb runas}
-Function ll($esto) {Get-ChildItem $esto -Force}
+Function ll ($esto) {Get-ChildItem $esto -Force}
 Function lf {Get-Command -Module Functions, Github, Internet, outlook, Work}
 Function cc {Set-Location $home}
 Function me {Set-Location "$home\Documents\WindowsPowerShell"}
 Function work {Set-Location "$home\OneDrive\Work"}
-Function open($esto) {Start-Process $esto}
-Function objects {
-    $file = Get-ChildItem HKLM:\Software\Classes -ErrorAction SilentlyContinue
-    $file | Where-Object {
-        $_.PSChildName -match '^\w+\.\w+$' -and (Test-Path -Path "$($_.PSPath)\CLSID")
-        } | Select-Object -ExpandProperty PSChildName
-}
+Function open ($esto) {Start-Process $esto}
 Function link {
     param(
         [string]$path,

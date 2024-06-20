@@ -55,3 +55,7 @@ Function ut {
 Function running {
     service | where {$_.Status -eq "Running"}
 }
+
+Function stopped {
+    service | where {$_.Status -eq "Stopped"}
+}

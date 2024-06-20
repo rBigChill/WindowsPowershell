@@ -27,20 +27,20 @@ Function fav {
     switch ($true) {
         $s {
             foreach ($site in $social) {
-                open $site; wait 1
+                open $site; sleep 1
             }
         } 
         $o {
             foreach ($site in $other) {
-                open $site; wait 1
+                open $site; sleep 1
             }
         }
         Default {
             foreach ($site in $other) {
-                open $site; wait 1
+                open $site; sleep 1
             } 
             foreach ($site in $social) {
-                open $site; wait 1
+                open $site; sleep 1
             }
         }
     }
@@ -49,7 +49,7 @@ Function fav {
 Function sound {
     $sound = @($YMUSIC, $YOUTUBE)
     foreach ($site in $sound) {
-        open $site; wait 1
+        open $site; sleep 1
     }
 }
 
@@ -72,11 +72,11 @@ Function google {
         switch ($true) {
             $a {
                 foreach ($site in $sites) {
-                    open "$site$s"; wait 1
+                    open "$site$s"; sleep 1
                 }
             } 
             Default {
-                open "$GOOGLE$s"; wait 1
+                open "$GOOGLE$s"; sleep 1
             }
         }
     }

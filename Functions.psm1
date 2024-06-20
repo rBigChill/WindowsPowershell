@@ -11,7 +11,6 @@ Function cc {Set-Location $home}
 Function me {Set-Location "$home\Documents\WindowsPowerShell"}
 Function work {Set-Location "$home\OneDrive\Work"}
 Function open($esto) {Start-Process $esto}
-Function wait([int]$time) {Start-Sleep -Seconds $time}
 Function objects {
     $file = Get-ChildItem HKLM:\Software\Classes -ErrorAction SilentlyContinue
     $file | Where-Object {
@@ -41,7 +40,7 @@ Function text {open $TEXT}
 Function leggo {
     $apps = @($OUTLOOK, $ONENOTE)
     foreach ($app in $apps) {
-        open $app; wait 1
+        open $app; sleep 1
     }
 }
 
@@ -62,7 +61,7 @@ Function timer {
         $var = [math]::Ceiling($min / 60)
         Write-Host -NoNewLine `r$var Minutes
         $min--
-        Start-Sleep -Seconds 1
+        sleep 1
     }
     [System.Windows.MessageBox]::Show("Timers Done!")
     Clear
@@ -72,6 +71,6 @@ Function dash {
     Clear
     while ($true) {
         Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)
-        Start-Sleep -Seconds 1
+        sleep 1
     }
 }

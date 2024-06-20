@@ -51,3 +51,7 @@ Function ut {
     $info = get-computerinfo
     new-timespan -start $info.OsLastBootUpTime -end $info.OsLocalDateTime
 }
+
+Function running {
+    service | where {$_.Status -eq "Running"}
+}

@@ -1,10 +1,8 @@
 # Personal Shell Functions
+Function su {start-process powershell -verb runas}
 Function off {shutdown /s /t 0}
 Function restart {Restart-Computer}
 Function cpu {ps | sort -Descending CPU | more}
-Function l {clear; rundll32.exe user32.dll,LockWorkStation}
-Function bin {Clear-Recyclebin -Force}
-Function su {start-process powershell -verb runas}
 Function ll ($esto) {Get-ChildItem $esto -Force}
 Function lf {Get-Command -Module Functions, Github, Internet, outlook, Work}
 Function cc {Set-Location $home}
@@ -12,6 +10,8 @@ Function me {Set-Location "$home\Documents\WindowsPowerShell"}
 Function work {Set-Location "$home\OneDrive\Work"}
 Function open ($esto) {Start-Process $esto}
 Function c {clear}
+Function l {clear; rundll32.exe user32.dll,LockWorkStation}
+Function bin {Clear-Recyclebin -Force}
 Function link {
     param(
         [string]$path,

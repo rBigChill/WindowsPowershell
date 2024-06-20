@@ -11,6 +11,7 @@ Function cc {Set-Location $home}
 Function me {Set-Location "$home\Documents\WindowsPowerShell"}
 Function work {Set-Location "$home\OneDrive\Work"}
 Function open ($esto) {Start-Process $esto}
+Function c {clear}
 Function link {
     param(
         [string]$path,

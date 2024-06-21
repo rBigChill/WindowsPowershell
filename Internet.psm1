@@ -33,7 +33,7 @@ Function fav {
         $e {go $entertainment}
         $o {go $other}
         Default {
-            go $listen
+            go $entertainment
             go $other
             go $social
         }

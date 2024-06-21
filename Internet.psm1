@@ -15,41 +15,27 @@ Function wifi {start($ROUTER)}
 Function fav {
     <#
     .Description
-    -choice are s = social or o = other. Default is all 
+    -choices are s = social, e = entertainment, o = other. Default is all 
     #>
     param(
         [switch]$s,
+        [switch]$e,
         [switch]$o
     )
-    $social = @($STACKFLOW, $GITHUB, $REDDIT, $DEVTO, $LINKED, $FACE, $INSTA)
-    $other = @($YMUSIC, $YOUTUBE, $FANATICS)
+    $social = @($REDDIT, $DEVTO, $LINKED, $FACE, $INSTA)
+    $entertainment = @($YMUSIC, $YOUTUBE)
+    $other = @($FANATICS, $STACKFLOW, $GITHUB)
+
+    Function go ($a) {foreach ($s in $a) {start $s; sleep 1}}
     
     switch ($true) {
-        $s {
-            foreach ($site in $social) {
-                start $site; sleep 1
-            }
-        } 
-        $o {
-            foreach ($site in $other) {
-                start $site; sleep 1
-            }
-        }
+        $s {go $social} 
+        $e {go $entertainment}
         Default {
-            foreach ($site in $other) {
-                start $site; sleep 1
-            } 
-            foreach ($site in $social) {
-                start $site; sleep 1
-            }
+            go $listen
+            go $other
+            go $social
         }
-    }
-}
-
-Function sound {
-    $sound = @($YMUSIC, $YOUTUBE)
-    foreach ($site in $sound) {
-        start $site; sleep 1
     }
 }
 
@@ -66,18 +52,14 @@ Function google {
 
     $sites = @($GOOGLE, $BING, $YOU, $YAHOO, $DUCK)
 
-    if ([string]::IsNullOrEmpty($s)) {
-            start $GOOGLE
-    } else {
-        switch ($true) {
-            $a {
-                foreach ($site in $sites) {
-                    start "$site$s"; sleep 1
-                }
-            } 
-            Default {
-                start "$GOOGLE$s"; sleep 1
+    switch ($true) {
+        $a {
+            foreach ($site in $sites) {
+                start "$site$s"; sleep 1
             }
+        } 
+        Default {
+            start "$GOOGLE$s"; sleep 1
         }
     }
 }

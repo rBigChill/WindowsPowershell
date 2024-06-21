@@ -31,6 +31,7 @@ Function fav {
     switch ($true) {
         $s {go $social} 
         $e {go $entertainment}
+        $o {go $other}
         Default {
             go $listen
             go $other

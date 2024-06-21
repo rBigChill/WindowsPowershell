@@ -10,7 +10,7 @@ Function me {Set-Location "$home\Documents\WindowsPowerShell"}
 Function work {Set-Location "$home\OneDrive\Work"}
 Function open ($esto) {Start-Process $esto}
 Function c {clear}
-Function l {clear; rundll32.exe user32.dll,LockWorkStation}
+Function lock {clear; rundll32.exe user32.dll,LockWorkStation}
 Function bin {Clear-Recyclebin -Force}
 Function link {
     param(

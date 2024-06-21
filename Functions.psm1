@@ -8,7 +8,6 @@ Function lf {Get-Command -Module Functions, Github, Internet, outlook, Work}
 Function cc {Set-Location $home}
 Function me {Set-Location "$home\Documents\WindowsPowerShell"}
 Function work {Set-Location "$home\OneDrive\Work"}
-Function open ($esto) {Start-Process $esto}
 Function c {clear}
 Function lock {clear; rundll32.exe user32.dll,LockWorkStation}
 Function bin {Clear-Recyclebin -Force}
@@ -20,22 +19,22 @@ Function link {
     New-Item -ItemType SymbolicLink -Path $path -Target $target
 }
 
-# Open files
-Function finance {open $FINANCE}
+# start files
+Function finance {start $FINANCE}
 
-# Open Apps
-Function edge {open $EDGE}
-Function chrome {open $CHROME}
-Function outlook {open $OUTLOOK}
-Function onenote {open $ONENOTE}
-Function crd {open $CRD}
-Function text {open $TEXT}
+# start Apps
+Function edge {start $EDGE}
+Function chrome {start $CHROME}
+Function outlook {start $OUTLOOK}
+Function onenote {start $ONENOTE}
+Function crd {start $CRD}
+Function text {start $TEXT}
 
 # Startup
 Function leggo {
     $apps = @($OUTLOOK, $ONENOTE)
     foreach ($app in $apps) {
-        open $app; sleep 1
+        start $app; sleep 1
     }
 }
 

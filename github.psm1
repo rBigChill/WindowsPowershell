@@ -1,5 +1,5 @@
-# Open github
-Function github {open($GITHUB)}
+# start github
+Function github {start($GITHUB)}
 
 # Initialize git repository
 Function init {

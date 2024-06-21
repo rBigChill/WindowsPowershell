@@ -9,9 +9,9 @@ Function news {
     newsapi
 }
 
-Function wifi {open($ROUTER)}
+Function wifi {start($ROUTER)}
 
-# Open Fav websites
+# start Fav websites
 Function fav {
     <#
     .Description
@@ -27,20 +27,20 @@ Function fav {
     switch ($true) {
         $s {
             foreach ($site in $social) {
-                open $site; sleep 1
+                start $site; sleep 1
             }
         } 
         $o {
             foreach ($site in $other) {
-                open $site; sleep 1
+                start $site; sleep 1
             }
         }
         Default {
             foreach ($site in $other) {
-                open $site; sleep 1
+                start $site; sleep 1
             } 
             foreach ($site in $social) {
-                open $site; sleep 1
+                start $site; sleep 1
             }
         }
     }
@@ -49,7 +49,7 @@ Function fav {
 Function sound {
     $sound = @($YMUSIC, $YOUTUBE)
     foreach ($site in $sound) {
-        open $site; sleep 1
+        start $site; sleep 1
     }
 }
 
@@ -67,29 +67,29 @@ Function google {
     $sites = @($GOOGLE, $BING, $YOU, $YAHOO, $DUCK)
 
     if ([string]::IsNullOrEmpty($s)) {
-            open $GOOGLE
+            start $GOOGLE
     } else {
         switch ($true) {
             $a {
                 foreach ($site in $sites) {
-                    open "$site$s"; sleep 1
+                    start "$site$s"; sleep 1
                 }
             } 
             Default {
-                open "$GOOGLE$s"; sleep 1
+                start "$GOOGLE$s"; sleep 1
             }
         }
     }
 }
 
-# Open youtube
+# start youtube
 Function youtube {
     param(
         [string]$esto
     )
     if ([string]::IsNullOrEmpty($esto)) {
-        open $YOUTUBE
+        start $YOUTUBE
     }else{
-        open "$YTSEARCH$esto"
+        start "$YTSEARCH$esto"
     }
 }

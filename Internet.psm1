@@ -1,5 +1,9 @@
 # Weather
-Function weather {python "$HOME\Documents\WindowsPowershell\Python\Weather\printWeather.py"}
+Function weather {
+    python "$HOME\Documents\WindowsPowershell\Python\Weather\printWeather.py"
+}
+
+# News
 Function reddit {python "$HOME\Documents\WindowsPowershell\Python\Reddit\Reddit.py"}
 Function hacker {python "$HOME\Documents\WindowsPowershell\Python\HackerNews\hackerNews.py"}
 Function newsapi {python "$HOME\Documents\WindowsPowershell\Python\NewsAPI\NewsAPI.py"}

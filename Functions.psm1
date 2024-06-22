@@ -4,7 +4,7 @@ Function off {shutdown /s /t 0}
 Function restart {Restart-Computer}
 Function cpu {ps | sort -Descending CPU | more}
 Function ll ($esto) {Get-ChildItem $esto -Force}
-Function lf {Get-Command -Module Functions, Github, Internet, outlook, Work}
+Function lf {Get-Command -Module Functions, Github, Internet, Outlook, Work}
 Function cc {Set-Location $home}
 Function me {Set-Location "$home\Documents\WindowsPowerShell"}
 Function work {Set-Location "$home\OneDrive\Work"}

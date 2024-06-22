@@ -1,8 +1,8 @@
 # Weather
-Function weather {python .\Documents\WindowsPowershell\Python\Weather\printWeather.py}
-Function reddit {python .\Documents\WindowsPowershell\Python\Reddit\Reddit.py}
-Function hacker {python .\Documents\WindowsPowershell\Python\HackerNews\hackerNews.py}
-Function newsapi {python .\Documents\WindowsPowershell\Python\NewsAPI\NewsAPI.py}
+Function weather {python "$HOME\Documents\WindowsPowershell\Python\Weather\printWeather.py"}
+Function reddit {python "$HOME\Documents\WindowsPowershell\Python\Reddit\Reddit.py"}
+Function hacker {python "$HOME\Documents\WindowsPowershell\Python\HackerNews\hackerNews.py"}
+Function newsapi {python "$HOME\Documents\WindowsPowershell\Python\NewsAPI\NewsAPI.py"}
 Function news {
     reddit
     hacker

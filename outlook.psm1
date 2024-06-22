@@ -38,6 +38,8 @@ function day{
 }
 
 function week{
+    Date
+
     # Grab Today
     $rangeStart = [DateTime]::Now.Date
     $rangeEnd = [DateTime]::Now.AddDays(7)

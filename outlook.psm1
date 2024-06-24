@@ -37,7 +37,11 @@ function day {
     Write-Host ""
 }
 
+<<<<<<< HEAD
 function week {
+=======
+function week{
+>>>>>>> 95efbdef94d084bf28a86eae4e0067625369b3bc
     Date
 
     # Grab Today

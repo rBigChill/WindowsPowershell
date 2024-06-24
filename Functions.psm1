@@ -8,7 +8,6 @@ Function lf {Get-Command -Module Functions, Github, Internet, Outlook, Work}
 Function cc {Set-Location $home}
 Function me {Set-Location "$home\Documents\WindowsPowerShell"}
 Function work {Set-Location "$home\OneDrive\Work"}
-Function c {clear}
 Function lock {clear; rundll32.exe user32.dll,LockWorkStation}
 Function bin {Clear-Recyclebin -Force}
 Function link {

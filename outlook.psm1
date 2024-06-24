@@ -12,7 +12,7 @@ function Send-Email {
     #$outlook.Quit()
 }
 
-function day{
+function day {
     Date
 
     # Grab Today
@@ -37,7 +37,9 @@ function day{
     Write-Host ""
 }
 
-function week{
+function week {
+    Date
+
     # Grab Today
     $rangeStart = [DateTime]::Now.Date
     $rangeEnd = [DateTime]::Now.AddDays(7)

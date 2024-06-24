@@ -102,6 +102,7 @@ class Weather:
                     message = f"{''}{i.temperature:4}{i.temperatureUnit:2}: {i.shortForecast}"
                     print(message)
             print()
+
         if rType == 'h':
             count = 0
             print()
@@ -110,6 +111,12 @@ class Weather:
                     message = f"{i.startTime[11:16]}: {i.temperature}{i.temperatureUnit}: {i.shortForecast}"
                     print(message)
                     count += 1
+            print()
+
+        if rType == 'n':
+            now = self.hourlyObjects[0]
+            message = f"{now.temperature}{now.temperatureUnit}: {now.shortForecast}"
+            print(message)
             print()
 
     # DailyRequest request daily weather

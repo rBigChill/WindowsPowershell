@@ -2,6 +2,7 @@ import subprocess
 import sys
 import json
 import datetime
+import argparse
 
 try:
     import requests
@@ -10,6 +11,7 @@ except:
 finally:
     import requests
 
+# Location object
 class Location:
     def __init__(self):
         WEBSITE = "https://api.techniknews.net/ipgeo/"
@@ -17,21 +19,18 @@ class Location:
         json = data.json()
         city = json['city']
         state = json['regionName']
-        self.cityInfo = f'{city}, {state}'
-
-        print(f'\n\tWeather for {self.cityInfo}')
-
+        self.info = f'{city}, {state}'
         self.lat = json['lat']
         self.lon = json['lon']
     
+# Grid object
 class Grid:
     def __init__(self):
         API_BASE = "https://api.weather.gov"
-        ll = Location()
-        POINT = f"{API_BASE}/points/{ll.lat}%2C{ll.lon}"
+        self.ll = Location()
+        POINT = f"{API_BASE}/points/{self.ll.lat}%2C{self.ll.lon}"
         data = requests.get(POINT)
         json = data.json()
-
         self.gridId = json['properties']['gridId']
         self.gridX = json['properties']['gridX']
         self.gridY = json['properties']['gridY']
@@ -76,9 +75,9 @@ class Weather:
     def __init__(self):
         API_BASE = "https://api.weather.gov"
         self.HEADERS = {"personalPythonApp": "cisneros.jorge82@yahoo.com"}
-        GRID = Grid()
-        self.DAILY = f"{API_BASE}/gridpoints/{GRID.gridId}/{GRID.gridX},{GRID.gridY}/forecast"
-        self.HOURLY = f"{API_BASE}/gridpoints/{GRID.gridId}/{GRID.gridX},{GRID.gridY}/forecast/hourly"
+        self.GRID = Grid()
+        self.DAILY = f"{API_BASE}/gridpoints/{self.GRID.gridId}/{self.GRID.gridX},{self.GRID.gridY}/forecast"
+        self.HOURLY = f"{API_BASE}/gridpoints/{self.GRID.gridId}/{self.GRID.gridX},{self.GRID.gridY}/forecast/hourly"
         self.dailyObjects = []
         self.hourlyObjects = []
 
@@ -173,10 +172,48 @@ class Weather:
         
         self._printWeather('h')
 
+    # NowRequest request hourly weather
+    def NowRequest(self):
+
+        request = self._makeRequest(self.HOURLY, self.HEADERS)
+        weather = json.loads(request.text)
+
+        for hour in weather['properties']['periods']:
+
+            r = HourlyWeatherResponse()
+            
+            r.number = hour['number']
+            r.name = hour['name']
+            r.startTime = hour['startTime']
+            r.endTime = hour['endTime']
+            r.isDaytime = hour['isDaytime']
+            r.temperature = hour['temperature']
+            r.temperatureUnit = hour['temperatureUnit']
+            r.temperatureTrend = hour['temperatureTrend']
+            r.probabilityOfPrecipitation = hour['probabilityOfPrecipitation']
+            r.relativeHumidity = hour['relativeHumidity']
+            r.windSpeed = hour['windSpeed']
+            r.windDirection = hour['windDirection']
+            r.icon = hour['icon']
+            r.shortForecast = hour['shortForecast']
+            r.detailedForecast = hour['detailedForecast']
+            self.hourlyObjects.append(r)
+        
+        self._printWeather('n')
+
 if __name__ == "__main__":
     """
     Add ability for daily or hourly request?
     """
-    w = Weather()
-    w.DailyRequest()
-    w.HourlyRequest()
+    p = argparse.ArgumentParser(exit_on_error=False)
+    p.add_argument("-n", action="store_true") 
+    a = p.parse_args()
+    if a.n:
+        w = Weather()
+        w.NowRequest()
+    else:
+        w = Weather()
+        print(f'\n\tWeather for {w.GRID.ll.info}')
+        w.DailyRequest()
+        w.HourlyRequest()
+

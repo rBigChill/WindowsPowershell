@@ -1,6 +1,12 @@
 # Weather
 Function weather {
-    python "$HOME\Documents\WindowsPowershell\Python\Weather\printWeather.py"
+    param(
+        [switch]$n
+    )
+    switch ($true) {
+        $n {python "$HOME\Documents\WindowsPowershell\Python\Weather\printWeather.py" -n}
+        Default {python "$HOME\Documents\WindowsPowershell\Python\Weather\printWeather.py"}
+    }
 }
 
 # News

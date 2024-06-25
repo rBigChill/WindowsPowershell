@@ -114,7 +114,7 @@ class Weather:
 
         if rType == 'n':
             now = self.hourlyObjects[0]
-            message = f"{now.temperature}{now.temperatureUnit}: {now.shortForecast}"
+            message = f"{now.temperature}{now.temperatureUnit} & {now.shortForecast}"
             print(message)
             print()
 
@@ -198,6 +198,7 @@ class Weather:
             r.shortForecast = hour['shortForecast']
             r.detailedForecast = hour['detailedForecast']
             self.hourlyObjects.append(r)
+            break
         
         self._printWeather('n')
 

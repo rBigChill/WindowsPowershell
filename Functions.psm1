@@ -59,11 +59,3 @@ Function timer {
     [System.Windows.MessageBox]::Show("Timers Done!")
     Clear
 }
-
-Function dash {
-    Clear
-    while ($true) {
-        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)
-        sleep 1
-    }
-}

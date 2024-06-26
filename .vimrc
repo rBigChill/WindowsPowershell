@@ -73,5 +73,3 @@ nnoremap <space>q :q!<CR>
 
 nnoremap o o<esc>
 nnoremap O O<esc>
-
-inoremap jj <esc>

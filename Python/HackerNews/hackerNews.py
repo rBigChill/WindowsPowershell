@@ -3,6 +3,7 @@
 import subprocess
 import sys
 import webbrowser
+import argparse
 
 from os import system, name
 
@@ -77,6 +78,19 @@ class HackerNews:
         self._printArticles()
         self._prompt()
         
+    def GetDashNews(self):
+        self._clear()
+        self._getArticles()
+        self._printArticles()
+
 if __name__ == "__main__":
-    HN = HackerNews()
-    HN.GetNews()
+    p = argparse.ArgumentParser(exit_on_error=False)
+    p.add_argument("-d", action="store_true")
+    a = p.parse_args()
+    if a.d:
+        HN = HackerNews()
+        HN.GetDashNews()
+    else:
+        HN = HackerNews()
+        HN.GetNews()
+

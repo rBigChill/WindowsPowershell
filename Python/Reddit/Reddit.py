@@ -7,6 +7,8 @@
 import subprocess
 import sys
 import webbrowser
+import argparse
+
 import redditCreds as c
 
 from os import system, name
@@ -86,6 +88,18 @@ class Reddit:
         self._printArticles()
         self._prompt()
 
+    def DashReddit(self):
+        self._clear()
+        self._grabArticles()
+        self._printArticles()
+
 if __name__ == "__main__":
-    r = Reddit()
-    r.GetReddit()
+    p = argparse.ArgumentParser(exit_on_error=False)
+    p.add_argument("-d", action="store_true")
+    a = p.parse_args()
+    if a.d:
+        r = Reddit()
+        r.DashReddit()
+    else:
+        r = Reddit()
+        r.GetReddit()

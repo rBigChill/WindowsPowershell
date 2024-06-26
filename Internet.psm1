@@ -10,7 +10,15 @@ Function weather {
 }
 
 # News
-Function reddit {python "$HOME\Documents\WindowsPowershell\Python\Reddit\Reddit.py"}
+Function reddit {
+    param(
+        [switch]$d
+    )
+    switch ($true) {
+        $d {python "$HOME\Documents\WindowsPowershell\Python\Reddit\Reddit.py" -d}
+        Default {python "$HOME\Documents\WindowsPowershell\Python\Reddit\Reddit.py"}
+    }
+}
 Function hacker {python "$HOME\Documents\WindowsPowershell\Python\HackerNews\hackerNews.py"}
 Function newsapi {python "$HOME\Documents\WindowsPowershell\Python\NewsAPI\NewsAPI.py"}
 Function news {

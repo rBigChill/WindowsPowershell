@@ -203,9 +203,6 @@ class Weather:
         self._printWeather('n')
 
 if __name__ == "__main__":
-    """
-    Add ability for daily or hourly request?
-    """
     p = argparse.ArgumentParser(exit_on_error=False)
     p.add_argument("-n", action="store_true") 
     a = p.parse_args()

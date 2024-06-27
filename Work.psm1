@@ -47,7 +47,7 @@ Function Get-Computers {
     get-adcomputer -Filter * | select-object Name | sort Name
 }
 
-Function ut {
+Function utime {
     $info = get-computerinfo
     new-timespan -start $info.OsLastBootUpTime -end $info.OsLocalDateTime
 }

@@ -63,6 +63,17 @@ class Reddit:
             count += 1
         print()
     
+    # Print Dash articles
+    def _printDash(self):
+        count = 1
+        print(f"{'':10}*** REDDIT ***")
+        print()
+        for i in self.ARTICLES:
+            article = f"{count}) {i.title}\n\t--> {i.url}\n"
+            print(article)
+            count += 1
+        print()
+    
     # clears the screen
     def _clear(self):
         system('cls') if name == 'nt' else system('clear')        
@@ -91,7 +102,7 @@ class Reddit:
     def DashReddit(self):
         self._clear()
         self._grabArticles()
-        self._printArticles()
+        self._printDash()
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(exit_on_error=False)

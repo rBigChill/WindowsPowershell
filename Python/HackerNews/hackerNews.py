@@ -56,6 +56,16 @@ class HackerNews:
             count += 1
         print()
 
+    def _printDash(self):
+        count = 1
+        print(f"{'':10}*** Hacker News ***")
+        print()
+        for i in self.frontPage:
+            article = f"{count}) {i.title}\n\t--> {i.url}\n"
+            print(article)
+            count += 1
+        print()
+
     def _clear(self):
         system('cls') if name == 'nt' else system('clear')
 
@@ -81,7 +91,7 @@ class HackerNews:
     def GetDashNews(self):
         self._clear()
         self._getArticles()
-        self._printArticles()
+        self._printDash()
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(exit_on_error=False)

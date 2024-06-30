@@ -11,8 +11,8 @@ Function Dash {
         Clear
         $d = Get-Date
         $date = $d.ToString("dddd, MMMM dd, yyyy HH:mm")
-        Write-Host $date`n; Sleep 2
-        Write-Host "Weather: $w`n"; Sleep 2
+        Write-Host $date`n
+        Write-Host "Weather: $w`n"
     }
 
     while ($true) {

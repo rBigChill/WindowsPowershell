@@ -27,8 +27,9 @@ Function script {
 Function here {
     script
     Clear
+    $w = weather -n
     while ((Get-Date -Format "HH:mm") -ne "17:01") {
-        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)
+        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time) $w
         Start-Sleep -Seconds 1
     }
     out

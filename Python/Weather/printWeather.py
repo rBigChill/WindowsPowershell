@@ -15,17 +15,14 @@ finally:
 class Location:
     def __init__(self):
         WEBSITE = "https://api.techniknews.net/ipgeo/"
-        try:
-            data = requests.get(WEBSITE)
-            json = data.json()
-            city = json['city']
-            state = json['regionName']
-            self.info = f'{city}, {state}'
-            self.lat = json['lat']
-            self.lon = json['lon']
-        except KeyError:
-            pass
-    
+        data = requests.get(WEBSITE)
+        json = data.json()
+        city = json['city']
+        state = json['regionName']
+        self.info = f'{city}, {state}'
+        self.lat = json['lat']
+        self.lon = json['lon']
+
 # Grid object
 class Grid:
     def __init__(self):
@@ -209,12 +206,14 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser(exit_on_error=False)
     p.add_argument("-n", action="store_true") 
     a = p.parse_args()
-    if a.n:
-        w = Weather()
-        w.NowRequest()
-    else:
-        w = Weather()
-        print(f'\n\tWeather for {w.GRID.ll.info}')
-        w.DailyRequest()
-        w.HourlyRequest()
-
+    try:
+        if a.n:
+            w = Weather()
+            w.NowRequest()
+        else:
+            w = Weather()
+            print(f'\n\tWeather for {w.GRID.ll.info}')
+            w.DailyRequest()
+            w.HourlyRequest()
+    except:
+        print("No Data")

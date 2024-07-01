@@ -15,13 +15,16 @@ finally:
 class Location:
     def __init__(self):
         WEBSITE = "https://api.techniknews.net/ipgeo/"
-        data = requests.get(WEBSITE)
-        json = data.json()
-        city = json['city']
-        state = json['regionName']
-        self.info = f'{city}, {state}'
-        self.lat = json['lat']
-        self.lon = json['lon']
+        try:
+            data = requests.get(WEBSITE)
+            json = data.json()
+            city = json['city']
+            state = json['regionName']
+            self.info = f'{city}, {state}'
+            self.lat = json['lat']
+            self.lon = json['lon']
+        except KeyError:
+            pass
     
 # Grid object
 class Grid:

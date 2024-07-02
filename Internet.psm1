@@ -3,7 +3,6 @@ Function web {
     param(
         [string]$url
     )
-
     $a = Invoke-WebRequest $url
     $a.ParsedHtml.IHTMLDocument2_body.innerText
 }

@@ -1,3 +1,13 @@
+# Print web requested text to screen
+Function web {
+    param(
+        [string]$url
+    )
+
+    $a = Invoke-WebRequest $url
+    $a.ParsedHtml.IHTMLDocument2_body.innerText
+}
+
 # Weather
 Function weather {
     param(

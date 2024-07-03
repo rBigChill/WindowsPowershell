@@ -29,7 +29,7 @@ Function here {
     Clear
     $w = weather -n
     while ((Get-Date -Format "HH:mm") -ne "17:01") {
-        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time) $w
+        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)`t`t"Weather: "$w
         Start-Sleep -Seconds 1
     }
     out

@@ -27,9 +27,15 @@ Function script {
 Function here {
     script
     Clear
+    $count = 0
     $w = weather -n
     while ((Get-Date -Format "HH:mm") -ne "17:01") {
-        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time)`t"Weather: "$w
+        if ($count * 60 -eq 3600) {
+            $w = weather -n
+            $count = 0
+        }
+        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time) ~ "Weather: "$w
+        $count++
         Start-Sleep -Seconds 1
     }
     out

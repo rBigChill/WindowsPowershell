@@ -34,7 +34,7 @@ Function here {
             $w = weather -n
             $count = 0
         }
-        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time) ~ "Weather: "$w
+        Write-Host -NoNewLine `r(Get-Date -DisplayHint Time) ~ "Weather:"$w
         $count++
         Start-Sleep -Seconds 1
     }

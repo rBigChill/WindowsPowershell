@@ -66,7 +66,7 @@ Function fav {
         [switch]$o
     )
     $social = @($REDDIT, $TWITTER, $FACE, $INSTA)
-    $entertainment = @($YMUSIC, $YOUTUBE, $TV, $TIK)
+    $entertainment = @($YMUSIC, $TV, $YOUTUBE, $TIK)
     $other = @($GITHUB)
 
     Function go ($a) {foreach ($s in $a) {start $s; sleep 1}}

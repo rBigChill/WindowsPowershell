@@ -62,7 +62,7 @@ Function fav {
     #>
     param(
         [switch]$s,
-        [switch]$e,
+        [switch]$e
     )
     $social = @($REDDIT, $TWITTER, $FACE, $INSTA)
     $entertainment = @($YMUSIC, $TV, $YOUTUBE, $TIK)

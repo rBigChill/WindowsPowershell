@@ -25,14 +25,14 @@ Function finance {start $FINANCE}
 # start Apps
 Function edge {start $EDGE}
 Function chrome {start $CHROME}
-Function outlook {start $OUTLOOK}
+Function outlook {start $EMAIL}
 Function onenote {start $ONENOTE}
 Function crd {start $CRD}
 Function text {start $TEXT}
 
 # Startup
 Function leggo {
-    $apps = @($OUTLOOK, $ONENOTE)
+    $apps = @($EMAIL, $ONENOTE)
     foreach ($app in $apps) {
         start $app; sleep 1
     }

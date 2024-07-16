@@ -14,7 +14,7 @@ $global:FINANCE = "$HOME\OneDrive\Documents\Finances.xlsx"
 # Applications
 $global:EDGE = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 $global:CHROME = "C:\Program Files\Google\Chrome\Application\chrome.exe"
-$global:OUTLOOK = "C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"
+$global:EMAIL= "C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"
 $global:ONENOTE = "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE"
 $global:CRD = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps\Chrome Remote Desktop.lnk"
 $global:TEXT = "C:\Users\cisne\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps\Messages.lnk"

@@ -24,7 +24,5 @@ if (Test-Path($ChocolateyProfile)) {
 }
 # Update Chocolatey
 Function update {
-    choco upgrade all -y
-    wsl --update
-    wsl
+    winget upgrade --silent --all --accept-package-agreements --accept-source-agreements --force --disable-interactivity
 }

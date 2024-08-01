@@ -1,12 +1,13 @@
 # Author: Jorge Cisneros
 
+# Import python modules
 import subprocess
 import sys
 import webbrowser
 import argparse
-
 from os import system, name
 
+# Import requests module, if not installed, download and import requests module
 try:
     import requests
 except:
@@ -14,6 +15,7 @@ except:
 finally:
     import requests
 
+# Article object
 class Article:
     def __init__(self):
         self.title = ''

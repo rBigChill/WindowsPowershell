@@ -1,4 +1,8 @@
-# Print web requested text to screen
+# Author: Jorge Cisneros
+#
+# Purpose: Automation functions for all my internet needs...
+#
+# Print web requested text to screen. Scrape the passed in website's data
 Function web {
     param(
         [string]$url
@@ -7,7 +11,7 @@ Function web {
     $a.ParsedHtml.IHTMLDocument2_body.innerText
 }
 
-# Weather
+# Runs weather python script and prints the current locations weather
 Function weather {
     param(
         [switch]$n

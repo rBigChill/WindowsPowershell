@@ -20,5 +20,10 @@ Function update {
     winget upgrade --silent --all --accept-package-agreements --accept-source-agreements --force --disable-interactivity --include-unknown
 }
 
+# Update choco application
+Function cupdate {
+    choco upgrade all -y -f
+}
+
 # Start personal threads
 #Start-Job -FilePath $home\Documents\WindowsPowerShell\Threads.ps1

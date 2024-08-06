@@ -17,7 +17,7 @@ cc
 
 # Update applications 
 Function update {
-    winget upgrade --silent --all --accept-package-agreements --accept-source-agreements --force --disable-interactivity --include-unknown
+    winget upgrade --silent --all --include-unknown --accept-package-agreements --accept-source-agreements --force --disable-interactivity
 }
 
 # Update choco application

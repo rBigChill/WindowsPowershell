@@ -2,6 +2,10 @@
 #
 # Purpose: Automation functions for all my internet needs...
 #
+
+# Variables
+$BASE = "$HOME\Documents\WindowsPowershell\Python\"
+
 # Scrape and print to screen the passed in url's body
 Function web {
     param(
@@ -16,9 +20,10 @@ Function weather {
     param(
         [switch]$n
     )
+    $FILE = "Weather\printWeather.py"
     switch ($true) {
-        $n {python "$HOME\Documents\WindowsPowershell\Python\Weather\printWeather.py" -n}
-        Default {python "$HOME\Documents\WindowsPowershell\Python\Weather\printWeather.py"}
+        $n {python $BASE$FILE -n}
+        Default {python $BASE$FILE}
     }
 }
 
@@ -27,27 +32,30 @@ Function reddit {
     param(
         [switch]$d
     )
+    $FILE = "Reddit\Reddit.py"
     switch ($true) {
-        $d {python "$HOME\Documents\WindowsPowershell\Python\Reddit\Reddit.py" -d}
-        Default {python "$HOME\Documents\WindowsPowershell\Python\Reddit\Reddit.py"}
+        $d {python $BASE$FILE -d}
+        Default {python $BASE$FILE}
     }
 }
 Function hacker {
     param(
         [switch]$d
     )
+    $FILE = "HackerNews\hackerNews.py" 
     switch ($true) {
-        $d {python "$HOME\Documents\WindowsPowershell\Python\HackerNews\hackerNews.py" -d}
-        Default {python "$HOME\Documents\WindowsPowershell\Python\HackerNews\hackerNews.py"}
+        $d {python $BASE$FILE -d}
+        Default {python $BASE$FILE}
     }
 }
 Function newsapi {
     param(
         [switch]$d
     )
+    $FILE = "NewsAPI\NewsAPI.py"
     switch ($true) {
-        $d {python "$HOME\Documents\WindowsPowershell\Python\NewsAPI\NewsAPI.py" -d}
-        Default {python "$HOME\Documents\WindowsPowershell\Python\NewsAPI\NewsAPI.py"}
+        $d {python $BASE$FILE -d}
+        Default {python $BASE$FILE}
     }
 }
 Function news {

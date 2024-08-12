@@ -135,8 +135,11 @@ Function Student {
         param(
             [int]$ID
         )
+        Write-Host "AD Info"
         Get-ADUser $ID
+        Write-Host "Master Info"
         Student-Master -ID $ID
+        Write-Host "Courses"
         Student-Courses -ID $ID
     }
 
@@ -218,8 +221,11 @@ Function Employee {
             [string]$last
         )
         $initial = $first[0]
+        Write-Host "AD Info"
         Get-ADUser $initial$last
+        Write-Host "Master Info"
         Name-Master -first $first -last $last
+        Write-Host "Load Info"
         OnGoing-Load -first $first -last $last
     }
 

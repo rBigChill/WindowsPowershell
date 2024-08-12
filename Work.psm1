@@ -57,27 +57,6 @@ Function out {
     }
 }
 
-# Print to screen all Active Directory computers on network
-Function Get-Computers {
-    get-adcomputer -Filter * | select-object Name | sort Name
-}
-
-# Print to screen uptime from selected machine
-Function utime {
-    $info = get-computerinfo
-    new-timespan -start $info.OsLastBootUpTime -end $info.OsLocalDateTime
-}
-
-# Print to screen running servcies on selected machine
-Function running {
-    service | where {$_.Status -eq "Running"}
-}
-
-# Print to screen stopped services from selected machine
-Function stopped {
-    service | where {$_.Status -eq "Stopped"}
-}
-
 Function Student {
     param([int]$ID)
 
@@ -237,3 +216,25 @@ Function Employee {
         Write-Host $errorMessage
     }
 }
+
+# Print to screen all Active Directory computers on network
+Function Get-Computers {
+    get-adcomputer -Filter * | select-object Name | sort Name
+}
+
+# Print to screen uptime from selected machine
+Function utime {
+    $info = get-computerinfo
+    new-timespan -start $info.OsLastBootUpTime -end $info.OsLocalDateTime
+}
+
+# Print to screen running servcies on selected machine
+Function running {
+    service | where {$_.Status -eq "Running"}
+}
+
+# Print to screen stopped services from selected machine
+Function stopped {
+    service | where {$_.Status -eq "Stopped"}
+}
+

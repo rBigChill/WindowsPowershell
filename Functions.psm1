@@ -88,8 +88,6 @@ Function leggo {
             foreach ($app in $apps) {
                 start $app; sleep 1
             }
-            finance; sleep 1
-            fav
         }
     }
 }

@@ -58,7 +58,9 @@ Function out {
 }
 
 Function Student {
-    param([int]$ID)
+    param(
+        [int]$ID
+    )
 
     if (Get-Module -ListAvailable SqlServer) {
         Import-Module -Name SqlServer
@@ -218,7 +220,7 @@ Function Employee {
 }
 
 # Print to screen all Active Directory computers on network
-Function Get-Computers {
+Function Computers {
     get-adcomputer -Filter * | select-object Name | sort Name
 }
 

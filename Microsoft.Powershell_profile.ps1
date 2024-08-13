@@ -21,7 +21,7 @@ Function update {
 }
 
 # Update choco application
-Function cupdate {
+Function wupdate {
     C:\Users\cisne\AppData\Local\Microsoft\WindowsApps\Winget.exe upgrade --silent --all --include-unknown --accept-package-agreements --accept-source-agreements --force --disable-interactivity
     #choco upgrade all -y -f
 }

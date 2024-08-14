@@ -76,8 +76,8 @@ Function fav {
     #>
     param(
         [switch]$s,
-        [switch]$n
-        [switch]$e
+        [switch]$n,
+        [switch]$e,
         [switch]$m
     )
     $social = @($FACE, $INSTA)

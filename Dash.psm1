@@ -23,8 +23,7 @@ Function Dash {
         Clear
 
         # Get date, modify it and write to host with no new lines
-        $d = Get-Date
-        $date = $d.ToString("dddd, MMMM dd, yyyy HH:mm")
+        $date = (Get-Date).ToString("dddd, MMMM dd, yyyy HH:mm")
         Write-Host $date`n
         Write-Host "Weather: $w`n"
     }

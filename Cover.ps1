@@ -3,8 +3,7 @@
     [string]$Company
 )
 
-$d = Get-Date
-$date = $d.ToString("dddd, MMMM dd, yyyy")
+$date = (Get-Date).ToString("dddd, MMMM dd, yyyy")
 
 "$date
 

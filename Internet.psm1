@@ -70,24 +70,32 @@ Function wifi {start($ROUTER)}
 Function fav {
     <#
     .Description
-    -choices are s = social, e = entertainment. Default is all 
+    -choices: s = social, n = news, e = entertainment, m = music.
+
+    Default is all 
     #>
     param(
         [switch]$s,
-        [switch]$e
+        [switch]$n,
+        [switch]$e,
+        [switch]$m
     )
-    $social = @($REDDIT, $TWITTER)
-    $entertainment = @($YMUSIC, $TIK, $YOUTUBE, $TV)
+    $social = @($FACE, $INSTA)
+    $news = @($REDDIT, $TWITTER)
+    $entertainment = @($TV, $YOUTUBE, $TIK)
+    $music = @($YMUSIC)
 
     Function go ($a) {foreach ($s in $a) {start $s; sleep 1}}
     
     switch ($true) {
         $s {go $social} 
+        $n {go $news}
         $e {go $entertainment}
-        $o {go $other}
+        $m {go $music}
         Default {
+            go $music
             go $entertainment
-            go $other
+            go $news
             go $social
         }
     }

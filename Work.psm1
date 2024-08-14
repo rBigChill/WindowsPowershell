@@ -57,7 +57,7 @@ Function out {
     }
 }
 
-Function Student {
+Function stu {
     param(
         [int]$ID
     )
@@ -133,7 +133,7 @@ Function Student {
     }
 }
 
-Function Employee {
+Function emp {
     param(
         [string]$first,
         [string]$last

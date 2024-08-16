@@ -57,7 +57,7 @@ Function out {
     }
 }
 
-Function st {
+Function stu {
     param(
         [int]$ID
     )
@@ -133,7 +133,7 @@ Function st {
     }
 }
 
-Function em {
+Function emp {
     param(
         [string]$first,
         [string]$last

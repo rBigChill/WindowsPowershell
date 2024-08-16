@@ -102,7 +102,7 @@ Function fav {
 }
 
 # Google search
-Function g {
+Function google {
     <#
     .Description
     -a to search all sites

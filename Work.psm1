@@ -168,9 +168,11 @@ Function emp {
 	            'Hired' = ORIG_HIRE_DTE,
 	            'Start' = FULLTIME_START_DTE,
 	            'Group' = GRP_CDE,
+                'Phone' = EWL.PHONE_NUMBER,
 	            'Termed' = TERMINATION_DTE
 	        FROM $SqlDBName.$SchemaName.NameMaster NM
 		        JOIN $SqlDBName.$SchemaName.EMPL_MAST EM ON EM.ID_NUM = NM.ID_NUM
+                JOIN $SqlDBName.$SchemaName.EMPL_WRK_LOC EWL ON EWL.ID_NUM = NM.ID_NUM
 	        WHERE NM.FIRST_NAME = '$first' AND NM.LAST_NAME = '$last'"
     }
 

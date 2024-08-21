@@ -38,4 +38,4 @@ Thank you for considering my application.
 Sincerely,
 Jorge Cisneros
 cisneros.jorge.a@gmail.com
-(310) 340-9148"
+(310) 340-9148" > $HOME\OneDrive\Documents\Resume\cover_letter.txt

@@ -4,56 +4,35 @@
 
 # Function Dash prints date, time, local weather, and current news articles to shell screen.
 Function Dash {
-    # Start by clearing the screen
+    # Clear the screen
     Clear
 
-    # Get current date and time
+    # Get current date, time, and weather
     $d = Get-Date
-
-    # Run weather, reddit, hacker, and newsapi python scripts.
-    #   saved returned values to variables
     $w = weather -n
-    $r = reddit -d
-    $h = hacker -d
-    $n = newsapi -d
 
     # Function header handles printing date, time, and weather to screen
     Function header {
-        # Clear the screen
-        Clear
-
         # Get date, modify it and write to host with no new lines
-        $date = (Get-Date).ToString("dddd, MMMM dd, yyyy HH:mm")
-        Write-Host $date`n
-        Write-Host "Weather: $w`n"
+        $date = (Get-Date).ToString("dddd, MMMM dd, yyyy HH:mm:ss")
+        $message = "$date`t-`tWeather: $w"
+        Write-Host $message -NoNewline `r
     }
 
     # Main while loop
     while ($true) {
-        # Check last time variables were loaded/re-loaded
-        # if longer than 1 hour, reload variables with current data
+        # Check last time variables were loaded
         $span = New-TimeSpan -Start $d -End (Get-Date)
+
         switch ($true) {
+            # if longer than 1 hour, reload variables with current data
             (($span).Hours -gt 1) {
+                $d = Get-Date
                 $w = weather -n
-                $r = reddit -d
-                $h = hacker -d
-                $n = newsapi -d
             }
-            # Main printing function. Prints information to screen
-            # 1 page at 60 second intervals.
+            # Print information to screen
             Default {
                 header
-                ForEach ($a in $r) {Write-Host $a}
-                Sleep 60
-
-                header
-                ForEach ($a in $h) {Write-Host $a}
-                Sleep 60
-
-                header
-                ForEach ($a in $n) {Write-Host $a}
-                Sleep 60
             }
         }
     }

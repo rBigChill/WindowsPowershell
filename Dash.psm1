@@ -15,7 +15,7 @@ Function Dash {
     Function header {
         # Get date, modify it and write to host with no new lines
         $date = (Get-Date).ToString("dddd, MMMM dd, yyyy HH:mm:ss")
-        $message = "$date`t-`tWeather: $w"
+        $message = "$date - Weather: $w"
         Write-Host $message -NoNewline `r
     }
 

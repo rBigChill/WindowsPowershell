@@ -76,12 +76,10 @@ Function fav {
     #>
     param(
         [switch]$s,
-        [switch]$n,
         [switch]$e,
         [switch]$m
     )
-    $social = @($FACE, $INSTA, $LINKED)
-    $news = @($REDDIT, $TWITTER)
+    $social = @($TWITTER, $LINKED, $FACE, $INSTA)
     $entertainment = @($TV, $YOUTUBE, $TIK)
     $music = @($YMUSIC)
 
@@ -90,12 +88,10 @@ Function fav {
     switch ($true) {
         $m {go $music}
         $e {go $entertainment}
-        $n {go $news}
         $s {go $social} 
         Default {
             go $music
             go $entertainment
-            go $news
             go $social
         }
     }

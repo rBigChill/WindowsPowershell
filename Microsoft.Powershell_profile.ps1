@@ -23,8 +23,4 @@ Function update {
 # Update choco application
 Function wupdate {
     C:\Users\cisne\AppData\Local\Microsoft\WindowsApps\Winget.exe upgrade --silent --all --include-unknown --accept-package-agreements --accept-source-agreements --force --disable-interactivity
-    #choco upgrade all -y -f
 }
-
-# Start personal threads
-#Start-Job -FilePath $home\Documents\WindowsPowerShell\Threads.ps1

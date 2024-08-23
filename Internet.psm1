@@ -104,7 +104,7 @@ Function google {
     -a to search all sites
     #>
     param(
-        [switch]$s,
+        [string]$s,
         [switch]$a
     )
 

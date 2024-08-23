@@ -79,8 +79,8 @@ Function fav {
         [switch]$e,
         [switch]$m
     )
-    $social = @($TWITTER, $LINKED, $FACE, $INSTA)
-    $entertainment = @($TV, $YOUTUBE, $TIK)
+    $social = @($LINKED, $FACE, $INSTA)
+    $entertainment = @($TV, $YOUTUBE)
     $music = @($YMUSIC)
 
     Function go ($a) {foreach ($s in $a) {start $s; sleep 1}}
@@ -104,7 +104,6 @@ Function google {
     -a to search all sites
     #>
     param(
-        [string]$s,
         [switch]$a
     )
 

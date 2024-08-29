@@ -80,7 +80,7 @@ Function fav {
         [switch]$m
     )
     $social = @($LINKED, $FACE, $INSTA)
-    $entertainment = @($TV, $YOUTUBE)
+    $entertainment = @($TV, $YOUTUBE, $REDDIT, $TWITTER)
     $music = @($YMUSIC)
 
     Function go ($a) {foreach ($s in $a) {start $s; sleep 1}}
@@ -90,7 +90,7 @@ Function fav {
         $e {go $entertainment}
         $s {go $social} 
         Default {
-            go $music
+            #go $music
             go $entertainment
             go $social
         }

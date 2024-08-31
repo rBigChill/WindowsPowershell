@@ -1,29 +1,36 @@
 # List personal module functions
 Function lf {Get-Command -Module Functions, Github, Internet, Outlook, Work}
 
-### Machine Functions ###
 # Start Powershell as Admin
 Function su {start-process powershell -verb runas}
+
 # Shut down machine
 Function off {shutdown /s /t 0}
+
 # Restart machine
 Function restart {Restart-Computer}
+
 # Get process sorted by highest CPU activity
 Function cpu {ps | sort -Descending CPU | more}
+
 # Lock machine
 Function lock {clear; rundll32.exe user32.dll,LockWorkStation}
+
 # Start the task manager
 Function task {Start-Process taskmgr}
+
 # Clear user recycle bin
 Function bin {Clear-Recyclebin -Force}
 
-### Directory Function ###
 # List all current diretory items
 Function ll ($directory) {Get-ChildItem $directory -Force}
+
 # Set current directory to home
 Function cc {Set-Location $home}
+
 # Set current directory to profile folder
 Function me {Set-Location "$home\Documents\WindowsPowerShell"}
+
 # Set current directory to coding files location
 Function work {Set-Location "$home\OneDrive\Work"}
 
@@ -36,19 +43,24 @@ Function link {
     New-Item -ItemType SymbolicLink -Path $path -Target $target
 }
 
-### Application Functions ###
 # Open Finance excel file 
 Function finance {start $FINANCE}
+
 # Start Edge web browser 
 Function edge {start $EDGE}
+
 # Start Chrome web browser
 Function chrome {start $CHROME}
+
 # Start Outlook application
 Function outlook {start $EMAIL}
+
 # Start Onenote application
 Function onenote {start $ONENOTE}
+
 # Start Chrome Remote Desktop application
 Function crd {start $CRD}
+
 # Start Google Messenger appication
 Function text {start $TEXT}
 

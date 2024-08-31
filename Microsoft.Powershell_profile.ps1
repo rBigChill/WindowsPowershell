@@ -8,7 +8,6 @@ Import-Module $home\Documents\WindowsPowerShell\Functions
 Import-Module $home\Documents\WindowsPowerShell\Outlook
 Import-Module $home\Documents\WindowsPowerShell\Work
 Import-Module $home\Documents\WindowsPowerShell\Variables
-Import-Module $home\Documents\WindowsPowerShell\Dash
 
 # Pull the most recent files from github for profile
 cd $home\Documents\WindowsPowerShell\

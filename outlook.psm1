@@ -10,7 +10,7 @@ function Send-Email {
     $mail.Subject = $subject
     $mail.Body = $body
     $mail.Send()
-    $outlook.Quit()
+    #$outlook.Quit()
 }
 
 function day {
@@ -36,7 +36,7 @@ function day {
         "{0:HH:mm}-{1:HH:mm}: {2}" -f [DateTime]$appt.Start, [DateTime]$appt.End, $appt.Subject
     }
     Write-Host ""
-    $outlook.Quit()
+    #$outlook.Quit()
 }
 
 function week {
@@ -62,5 +62,5 @@ function week {
         "{0:ddd: MM/dd: HH:mm}-{1:HH:mm}: {2}" -f [DateTime]$appt.Start, [DateTime]$appt.End, $appt.Subject
     }
     Write-Host ""
-    $outlook.Quit()
+    #$outlook.Quit()
 }

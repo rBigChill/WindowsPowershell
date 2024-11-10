@@ -79,7 +79,7 @@ Function fav {
         [switch]$e,
         [switch]$m
     )
-    $social = @($REDDIT, $LINKED, $FACE, $INSTA)
+    $social = @($REDDIT, $LINKED)
     $entertainment = @($TV, $YOUTUBE)
     $music = @($YMUSIC)
 

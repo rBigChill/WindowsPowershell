@@ -75,11 +75,11 @@ Function fav {
     Default is all 
     #>
     param(
-        [switch]$s,
+        #[switch]$s,
         [switch]$e,
         [switch]$m
     )
-    $social = @($REDDIT)
+    $social = @()
     $entertainment = @($TV, $YOUTUBE)
     $music = @($YMUSIC)
 
@@ -88,11 +88,11 @@ Function fav {
     switch ($true) {
         $m {go $music}
         $e {go $entertainment}
-        $s {go $social} 
+        #$s {go $social} 
         Default {
             #go $music
             go $entertainment
-            go $social
+            #go $social
         }
     }
 }

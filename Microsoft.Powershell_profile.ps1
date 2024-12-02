@@ -18,8 +18,3 @@ cc
 Function update {
     winget upgrade --silent --all --include-unknown --accept-package-agreements --accept-source-agreements --force --disable-interactivity
 }
-
-# Update choco application
-Function wupdate {
-    C:\Users\cisne\AppData\Local\Microsoft\WindowsApps\Winget.exe upgrade --silent --all --include-unknown --accept-package-agreements --accept-source-agreements --force --disable-interactivity
-}

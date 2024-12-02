@@ -10,7 +10,10 @@ function Send-Email {
     $mail.Subject = $subject
     $mail.Body = $body
     $mail.Send()
-    #$outlook.Quit()
+    $mail = $null
+    $outlook.Quit()
+    [System.Runtime.InteropServices.Marshal]::ReleaseComObject($outlook) | Out-Null
+    $outlook = $null
 }
 
 function day {

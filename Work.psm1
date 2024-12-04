@@ -2,6 +2,10 @@
 #
 # Purpose: Functions to use at work
 
+Function timer {
+    while($true) {clear; date; sleep 1}
+}
+
 Function stu {
     param(
         [int]$ID

@@ -3,7 +3,13 @@
 # Purpose: Functions to use at work
 
 Function timer {
-    while($true) {clear; date; sleep 1}
+    clear
+    #while($true) {Write-Host "$(date)" -NoNewLine `r; sleep 1}
+    while($true) {
+        [System.Console]::SetCursorPosition(0, 0)
+        Write-Host "$(date)" -NoNewLine `r
+        sleep -Milliseconds 500
+    }
 }
 
 Function stu {

@@ -71,13 +71,13 @@ Function leggo {
     )
     switch ($true) {
         $w {
-            $apps = @($ONENOTE, $EMAIL, "https://chatgpt.com/")
+            $apps = @("https://chatgpt.com/", $ONENOTE, $EMAIL)
             foreach ($app in $apps) {
                 start $app; sleep 1
             }
         }
         Default {
-            $apps = @($ONENOTE, $EMAIL, $TEXT, "https://chatgpt.com/")
+            $apps = @("https://chatgpt.com/", $ONENOTE, $EMAIL, $TEXT, )
             foreach ($app in $apps) {
                 start $app; sleep 1
             }

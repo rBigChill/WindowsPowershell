@@ -77,7 +77,7 @@ Function leggo {
             }
         }
         Default {
-            $apps = @("https://chatgpt.com/", $ONENOTE, $EMAIL, $TEXT, )
+            $apps = @("https://chatgpt.com/", $ONENOTE, $EMAIL, $TEXT)
             foreach ($app in $apps) {
                 start $app; sleep 1
             }

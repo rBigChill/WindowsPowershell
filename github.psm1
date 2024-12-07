@@ -41,3 +41,8 @@ Function clone {
     )
     git clone https://github.com/$esto.git
 }
+
+# Logs git user out
+Function gitout {
+    git credential-manager github logout git
+}

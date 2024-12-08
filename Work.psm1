@@ -4,7 +4,6 @@
 
 Function timer {
     clear
-    #while($true) {Write-Host "$(date)" -NoNewLine `r; sleep 1}
     while($true) {
         [System.Console]::SetCursorPosition(0, 0)
         Write-Host "$(date)" -NoNewLine `r

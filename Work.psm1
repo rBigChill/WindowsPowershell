@@ -6,7 +6,7 @@ Function timer {
     clear
     while($true) {
         [System.Console]::SetCursorPosition(0, 0)
-        Write-Host "$(date)"
+        Write-Host "$(date)" -NoNewLine
         $len = (date).ToString().Length
         sleep -Milliseconds 500
     }

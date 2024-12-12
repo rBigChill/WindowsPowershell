@@ -71,7 +71,7 @@ Function leggo {
     )
     switch ($true) {
         $w {
-            $apps = @($GPT, $ONENOTE, $EMAIL)
+            $apps = @($EDGE, $ONENOTE, $EMAIL)
             foreach ($app in $apps) {
                 start $app; sleep 1
             }

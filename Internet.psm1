@@ -124,3 +124,8 @@ Function youtube {
         start "$YTSEARCH$esto"
     }
 }
+
+# Start ChatGPT
+Function ai {
+    Start $GPT
+}

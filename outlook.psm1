@@ -10,10 +10,10 @@ function Send-Email {
     $mail.Subject = $subject
     $mail.Body = $body
     $mail.Send()
-    $mail = $null
-    $outlook.Quit()
-    [System.Runtime.InteropServices.Marshal]::ReleaseComObject($outlook) | Out-Null
-    $outlook = $null
+    $namespace = $outlook.GetNameSpace("MAPI")
+    $outbox = $namespace.GetDefaultFolder(4)
+    while ($outbox.Items.Count -gt 0) {Write-Host "Sending..."; sleep 1}
+    #ps outlook | select id | kill
 }
 
 function day {

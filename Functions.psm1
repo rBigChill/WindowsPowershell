@@ -1,3 +1,6 @@
+# Close all open windows
+Function close {ps | where MainWindowTitle -ne "" | select id | kill}
+
 # List personal module functions
 Function lf {Get-Command -Module Functions, Github, Internet, Outlook, Work}
 

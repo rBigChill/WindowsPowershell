@@ -1,3 +1,8 @@
+# Get all personal scheduled task
+Function task {
+    Get-ScheduledTask | get-scheduledtaskinfo | where {$_.TaskPath -eq "\Personal\"}
+}
+
 # Close all open windows
 Function close {ps | where MainWindowTitle -ne "" | select id | kill}
 
@@ -18,9 +23,6 @@ Function cpu {ps | sort -Descending CPU | more}
 
 # Lock machine
 Function lock {clear; rundll32.exe user32.dll,LockWorkStation}
-
-# Start the task manager
-Function task {Start-Process taskmgr}
 
 # Clear user recycle bin
 Function bin {Clear-Recyclebin -Force}

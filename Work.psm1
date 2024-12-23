@@ -8,7 +8,7 @@ Function timer {
         [System.Console]::SetCursorPosition(0, 0)
         Write-Host "$(date)" -NoNewLine
         $len = (date).ToString().Length
-        sleep -Milliseconds 500
+        sleep 1
     }
 }
 

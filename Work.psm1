@@ -2,12 +2,12 @@
 #
 # Purpose: Functions to use at work
 
-Function timer {
+Function time {
     clear
+    $weather = weather -n
     while($true) {
         [System.Console]::SetCursorPosition(0, 0)
-        Write-Host "$(date)" -NoNewLine
-        $len = (date).ToString().Length
+        Write-Host "$(date)`n$weather"
         sleep 1
     }
 }

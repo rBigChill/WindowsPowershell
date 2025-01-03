@@ -4,6 +4,7 @@
 
 Function time {
     clear
+    [System.Console]::CursorVisible = $false
     $weather = weather -n
     $hour = (Get-Date).Hour
     while($true) {

@@ -5,7 +5,13 @@
 Function time {
     clear
     $weather = weather -n
+    $hour = (Get-Date).Hour
     while($true) {
+        $now = (Get-Date).Hour
+        if ($now -gt $hour) {
+            $weather = weather -n
+            $hour = (Get-Date).Hour
+        }
         [System.Console]::SetCursorPosition(0, 0)
         Write-Host "$(date)`n$weather"
         sleep 1

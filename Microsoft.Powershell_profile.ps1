@@ -1,3 +1,6 @@
+# Set Window Title
+[System.Console]::Title = "Jorge Fucken Cisneros"
+
 # Set shell prompt
 Function prompt {"`n$(gl)`n`n:)~ "}
 

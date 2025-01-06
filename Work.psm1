@@ -14,7 +14,7 @@ Function time {
             $hour = (Get-Date).Hour
         }
         [System.Console]::SetCursorPosition(0, 0)
-        Write-Host "$(date) $weather"
+        Write-Host "$(date) $weather" -NoNewLine
         sleep 1
     }
 }

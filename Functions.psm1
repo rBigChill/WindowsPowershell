@@ -1,15 +1,4 @@
 # Get all personal scheduled task
-
-# Get all available COM Objects
-Function comobs {
-    [AppDomain]::CurrentDomain.GetAssemblies() |
-      ForEach-Object {
-            $_.GetExportedTypes() |
-                  ForEach-Object { $_.FullName }
-                    }
-}
-
-# Get all personal scheduled task
 Function task {
     Get-ScheduledTask | get-scheduledtaskinfo | where {$_.TaskPath -eq "\Personal\"}
 }

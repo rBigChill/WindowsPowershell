@@ -12,6 +12,7 @@ Function time {
         if ($now -gt $hour) {
             $weather = weather -n
             $hour = (Get-Date).Hour
+            clear
         }
         [System.Console]::SetCursorPosition(0, 0)
         Write-Host "$(date) $weather" -NoNewLine

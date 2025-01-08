@@ -22,3 +22,10 @@ Function update {
     wsl --update
     winget upgrade --silent --all --include-unknown --accept-package-agreements --accept-source-agreements --force --disable-interactivity
 }
+
+# Find COM Objects
+Function Get-ComObjects {
+    Get-ChildItem HKLM:\Software\Classes -ErrorAction SilentlyContinue | Where-Object {
+            $_.PSChildName -match '^\w+\.\w+$' -and (Test-Path -Path "$($_.PSPath)\CLSID")
+    } | Select-Object -ExpandProperty PSChildName
+}

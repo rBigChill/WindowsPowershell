@@ -32,5 +32,5 @@ Function Get-ComObject {
 
 # Find all assemblies
 Function Get-Assemblies {
-    [AppDomain]::CurrentDomain.GetAssemblies().getname() | select name
+    [AppDomain]::CurrentDomain.GetAssemblies().getname() | select name | sort name
 }

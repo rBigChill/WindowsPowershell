@@ -29,3 +29,8 @@ Function Get-ComObject {
             $_.PSChildName -match '^\w+\.\w+$' -and (Test-Path -Path "$($_.PSPath)\CLSID")
     } | Select-Object -ExpandProperty PSChildName
 }
+
+# Find all assemblies
+Function Get-Assemblies {
+    [AppDomain]::CurrentDomain.GetAssemblies().getname() | select name
+}

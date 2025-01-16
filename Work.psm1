@@ -20,8 +20,12 @@ Function time {
     }
 }
 
-Function akclogin {
+Function aklogin {
     Get-Content "\\KCL-WEB01\c$\Public\Login.txt"
+}
+
+Function akgeneral {
+    Get-Content "\\KCL-WEB01\c$\Public\General.txt"
 }
 
 Function stu {

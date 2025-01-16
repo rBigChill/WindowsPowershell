@@ -30,8 +30,10 @@ Function akgeneral {
 
 Function aklogs {
     while ($true) {
-        aklogin; sleep -seconds 60*15
-        akgeneral; sleep -seconds 60*15
+        aklogin
+        sleep 60*15
+        akgeneral
+        sleep 60*15
     }
 }
 

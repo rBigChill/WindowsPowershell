@@ -21,7 +21,7 @@ Function time {
 }
 
 Function akclogin {
-    ls "\\KCL-WEB01\c$\Public\Login.txt"
+    Get-Content "\\KCL-WEB01\c$\Public\Login.txt"
 }
 
 Function stu {

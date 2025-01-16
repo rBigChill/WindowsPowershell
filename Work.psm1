@@ -28,6 +28,13 @@ Function akgeneral {
     Get-Content "\\KCL-WEB01\c$\Public\General.txt"
 }
 
+Function aklogs {
+    while ($true) {
+        aklogin; sleep 60*15
+        akgeneral; sleep 60*15
+    }
+}
+
 Function stu {
     param(
         [int]$ID

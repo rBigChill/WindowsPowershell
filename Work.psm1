@@ -1,4 +1,4 @@
-# Author: Jorge Cisneros
+#Author: Jorge Cisneros
 #
 # Purpose: Functions to use at work
 
@@ -18,6 +18,10 @@ Function time {
         Write-Host "$(date) $weather" -NoNewLine
         sleep 1
     }
+}
+
+Function akclogin {
+    ls "\\KCL-WEB01\c$\Public\Login.txt"
 }
 
 Function stu {

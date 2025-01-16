@@ -33,7 +33,7 @@ Function aklogs {
     while ($true) {
         $a = aklogin
         foreach ($b in $a) {
-            if ($b.Contains("FAILURE") {
+            if ($b.Contains("FAILURE")) {
                 Write-Host $b
             }
         }

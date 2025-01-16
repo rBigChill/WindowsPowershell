@@ -29,11 +29,12 @@ Function akgeneral {
 }
 
 Function aklogs {
+    $t = 60*15
     while ($true) {
         aklogin
-        sleep 60*15
+        sleep $t
         akgeneral
-        sleep 60*15
+        sleep $t
     }
 }
 

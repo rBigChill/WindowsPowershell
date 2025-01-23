@@ -28,7 +28,7 @@ Function aklogin {
         $u {
             Get-Content "\\KCL-WEB01\c$\Public\Login.txt"
             foreach ($b in $a) {
-                if ($b.Contains($b)) {
+                if ($b.Contains($u)) {
                     Write-Host $b
                 }
             }

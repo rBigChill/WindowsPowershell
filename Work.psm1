@@ -23,6 +23,7 @@ Function time {
 Function aklogin {
     param(
         [switch]$u,
+        [switch]$t,
         [string]$user
     )
     switch ($true) {
@@ -34,8 +35,11 @@ Function aklogin {
                 }
             }
         }
-        Default {
+        $t {
             Get-Content "\\KCL-WEB01\c$\Public\Login.txt" -Tail 50
+        }
+        Default {
+            Get-Content "\\KCL-WEB01\c$\Public\Login.txt"
         }
     }
 }
@@ -53,7 +57,7 @@ Function aklogs {
 #               Write-Host $b
 #           }
 #       }
-        aklogin
+        aklogin -t
         sleep $t
         akgeneral
         sleep $t

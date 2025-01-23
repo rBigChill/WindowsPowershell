@@ -45,7 +45,17 @@ Function aklogin {
 }
 
 Function akgeneral {
-    Get-Content "\\KCL-WEB01\c$\Public\General.txt" -Tail 50
+    param(
+        [switch]$t
+    )
+    switch ($true) {
+        $t {
+            Get-Content "\\KCL-WEB01\c$\Public\General.txt" -Tail 50
+        }
+        Default {
+            Get-Content "\\KCL-WEB01\c$\Public\General.txt"
+        }
+    }
 }
 
 Function aklogs {

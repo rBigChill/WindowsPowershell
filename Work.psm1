@@ -22,13 +22,14 @@ Function time {
 
 Function aklogin {
     param(
-        [switch]$u
+        [switch]$u,
+        [string]$user
     )
     switch ($true) {
         $u {
-            Get-Content "\\KCL-WEB01\c$\Public\Login.txt"
+            $a = Get-Content "\\KCL-WEB01\c$\Public\Login.txt"
             foreach ($b in $a) {
-                if ($b.Contains($u)) {
+                if ($b.Contains($user)) {
                     Write-Host $b
                 }
             }

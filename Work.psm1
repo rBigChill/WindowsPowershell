@@ -24,16 +24,18 @@ Function aklogin {
     param(
         [switch]$u
     )
-    $u {
-        Get-Content "\\KCL-WEB01\c$\Public\Login.txt"
-        foreach ($b in $a) {
-            if ($b.Contains($b)) {
-                Write-Host $b
+    switch ($true) {
+        $u {
+            Get-Content "\\KCL-WEB01\c$\Public\Login.txt"
+            foreach ($b in $a) {
+                if ($b.Contains($b)) {
+                    Write-Host $b
+                }
             }
         }
-    }
-    Default {
-        Get-Content "\\KCL-WEB01\c$\Public\Login.txt" -Tail 50
+        Default {
+            Get-Content "\\KCL-WEB01\c$\Public\Login.txt" -Tail 50
+        }
     }
 }
 

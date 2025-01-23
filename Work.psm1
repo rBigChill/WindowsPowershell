@@ -21,7 +21,20 @@ Function time {
 }
 
 Function aklogin {
-    Get-Content "\\KCL-WEB01\c$\Public\Login.txt" -Tail 50
+    param(
+        [switch]$u
+    )
+    $u {
+        Get-Content "\\KCL-WEB01\c$\Public\Login.txt"
+        foreach ($b in $a) {
+            if ($b.Contains($b)) {
+                Write-Host $b
+            }
+        }
+    }
+    Default {
+        Get-Content "\\KCL-WEB01\c$\Public\Login.txt" -Tail 50
+    }
 }
 
 Function akgeneral {

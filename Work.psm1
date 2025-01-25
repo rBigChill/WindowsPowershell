@@ -61,12 +61,6 @@ Function akgeneral {
 Function aklogs {
     $t = 60*15
     while ($true) {
-#       $a = aklogin
-#       foreach ($b in $a) {
-#           if ($b.Contains("FAILURE")) {
-#               Write-Host $b
-#           }
-#       }
         aklogin -t
         sleep $t
         akgeneral

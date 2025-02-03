@@ -76,8 +76,6 @@ Function stu {
     if (Get-Module -ListAvailable SqlServer) {
         Import-Module -Name SqlServer
     } else {
-        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-        Install-PackageProvider -Name NuGet -Force
         Install-Module -Name SqlServer -Scope CurrentUser -Force
         Import-Module -Name SqlServer
     }
@@ -153,8 +151,6 @@ Function emp {
     if (Get-Module -ListAvailable SqlServer) {
         Import-Module -Name SqlServer
     } else {
-        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-        Install-PackageProvider -Name NuGet -Force
         Install-Module -Name SqlServer -Scope CurrentUser -Force
         Import-Module -Name SqlServer
     }

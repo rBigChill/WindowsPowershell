@@ -42,11 +42,12 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'itchyny/lightline.vim'
     Plug 'scrooloose/nerdtree'
-"    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "    Plug 'mattn/emmet-vim'
     Plug 'vim-syntastic/syntastic'
 "    Plug 'valloric/youcompleteme'
-"    Plug 'pprovost/vim-ps1'
+    Plug 'pprovost/vim-ps1'
+    Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 

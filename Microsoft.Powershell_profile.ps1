@@ -34,3 +34,8 @@ Function Get-ComObject {
 Function Get-Assemblies {
     [AppDomain]::CurrentDomain.GetAssemblies().getname() | select name | sort name
 }
+
+# Find all modules
+Function Get-Mods {
+    Get-Module -ListAvailable -All
+}

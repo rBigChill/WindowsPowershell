@@ -37,5 +37,5 @@ Function Get-Assemblies {
 
 # Find all modules
 Function Get-Mods {
-    Get-Module -ListAvailable -All
+    Get-Module -ListAvailable -All | Select-Object Name
 }

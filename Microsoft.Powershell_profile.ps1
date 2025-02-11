@@ -39,3 +39,8 @@ Function Get-Assemblies {
 Function Get-Mods {
     Get-Module -ListAvailable -All | Select-Object Name | Sort-Object Name
 }
+
+# Find CimClasses
+Function Get-Cims {
+    Get-CimClass | select CimClassName | Sort CimClassName
+}

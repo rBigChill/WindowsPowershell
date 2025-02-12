@@ -229,5 +229,5 @@ Function emp {
 }
 
 Function update99 {
-    Copy-Item -Path "C:\Users\jcisneros\Documents\WindowsPowerShell\*" -Destination .\WindowsPowershell -Recurse
+    Copy-Item -Path "C:\Users\jcisneros\Documents\WindowsPowerShell\*" -Destination ."C:\Users\jcisneros99\Documents\WindowsPowerShell\" -Recurse
 }

@@ -227,3 +227,7 @@ Function emp {
         Write-Host $errorMessage
     }
 }
+
+Function update99 {
+    Copy-Item -Path "C:\Users\jcisneros\Documents\WindowsPowerShell\*" -Destination .\WindowsPowershell -Recurse
+}

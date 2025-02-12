@@ -229,5 +229,6 @@ Function emp {
 }
 
 Function update99 {
+    Remove-Item "C:\Users\jcisneros99\Documents\WindowsPoweshell" -Recurse -Force
     Copy-Item -Path "C:\Users\jcisneros\Documents\WindowsPowerShell" -Destination "C:\Users\jcisneros99\Documents\WindowsPowerShell" -Recurse
 }

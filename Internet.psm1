@@ -55,39 +55,6 @@ Function news {
     newsapi
 }
 
-Function wifi {start($ROUTER)}
-
-# start Fav websites
-Function fav {
-    <#
-    .Description
-    -choices: s = social, n = news, e = entertainment, m = music.
-
-    Default is all 
-    #>
-    param(
-        #[switch]$s,
-        [switch]$e,
-        [switch]$m
-    )
-    $social = @()
-    $entertainment = @($TV, $YOUTUBE)
-    $music = @($YMUSIC)
-
-    Function go ($a) {foreach ($s in $a) {start $s; sleep 1}}
-    
-    switch ($true) {
-        $m {go $music}
-        $e {go $entertainment}
-        #$s {go $social} 
-        Default {
-            #go $music
-            go $entertainment
-            #go $social
-        }
-    }
-}
-
 # Google search
 Function google {
     <#

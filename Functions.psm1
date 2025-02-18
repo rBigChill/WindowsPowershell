@@ -58,15 +58,6 @@ Function me {Set-Location "$home\Documents\WindowsPowerShell"}
 # Set current directory to coding files location
 Function work {Set-Location "$home\OneDrive\Work"}
 
-# Create symbolic link
-Function link {
-    param(
-        [string]$path,
-        [string]$target
-    )
-    New-Item -ItemType SymbolicLink -Path $path -Target $target
-}
-
 # Open Finance excel file 
 Function finance {start $FINANCE}
 
@@ -81,9 +72,6 @@ Function outlook {start $EMAIL}
 
 # Start Onenote application
 Function onenote {start $ONENOTE}
-
-# Start Chrome Remote Desktop application
-Function crd {start $CRD}
 
 # Start Google Messenger appication
 Function text {start $TEXT}

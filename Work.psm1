@@ -2,6 +2,23 @@
 
 # Purpose: Functions to use at work
 
+Function here {
+    clear
+    [System.Console]::CursorVisible = $false
+    while ($true) {
+        $h = 16 - (date).Hour
+        $m = 60 - (date).Minute
+        $s = 60 - (date).Second
+        if ($h -le 1) {
+            Write-Host "$h Hour`n$m Minutes`n$s Seconds  "
+        } else {
+            Write-Host "$h Hours`n$m Minutes`n$s Seconds  "
+        }
+        [System.Console]::SetCursorPosition(0, 0)
+        Sleep 1
+    }
+}
+
 Function aklogin {
     param(
         [switch]$u,

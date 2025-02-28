@@ -10,9 +10,9 @@ Function here {
         $m = 60 - (date).Minute
         $s = 60 - (date).Second
         if ($h -le 1) {
-            Write-Host "$h Hour:`n$m Minutes`n$s Seconds"
+            Write-Host "$h Hour:  `n$m Minutes  `n$s Seconds  "
         } else {
-            Write-Host "$h Hours:`n$m Minutes`n$s Seconds"
+            Write-Host "$h Hours:  `n$m Minutes  `n$s Seconds  "
         }
         [System.Console]::SetCursorPosition(0, 0)
         Sleep 1

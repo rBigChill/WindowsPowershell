@@ -1,21 +1,37 @@
 # Set Window Title
-[System.Console]::Title = "Jorge Fucken Cisneros"
+[System.Console]::Title = "Welcome to the Jungle!"
 
 # Set shell prompt
 Function prompt {"`n$(gl)`n`n:)~ "}
 
 # Import personal modules
-Import-Module $home\Documents\WindowsPowerShell\Functions
+Import-Module $home\Documents\WindowsPowerShell\Dash
 Import-Module $home\Documents\WindowsPowerShell\Github
 Import-Module $home\Documents\WindowsPowerShell\Internet
 Import-Module $home\Documents\WindowsPowerShell\Outlook
 Import-Module $home\Documents\WindowsPowerShell\Variables
 Import-Module $home\Documents\WindowsPowerShell\Work
 
-# Pull the most recent files from github for profile
-cd $home\Documents\WindowsPowerShell\
-pull
-cc
+# Startup favorite applications to work with
+Function leggo {
+    param(
+        [switch]$w
+    )
+    switch ($true) {
+        $w {
+            $apps = @($ONENOTE, $EMAIL)
+            foreach ($app in $apps) {
+                start $app; sleep 1
+            }
+        }
+        Default {
+            $apps = @($ONENOTE, $EMAIL, $TEXT)
+            foreach ($app in $apps) {
+                start $app; sleep 1
+            }
+        }
+    }
+}
 
 # Update applications 
 Function update {
@@ -44,3 +60,67 @@ Function Get-Mods {
 Function Get-Cims {
     Get-CimClass | select CimClassName | Sort CimClassName
 }
+
+# Get all personal scheduled task
+Function task {
+    Get-ScheduledTask | get-scheduledtaskinfo | where {$_.TaskPath -eq "\Personal\"}
+}
+
+# Close all open windows
+Function close {ps | where MainWindowTitle -ne "" | select id | kill}
+
+# List personal module functions
+Function lf {Get-Command -Module Functions, Github, Internet, Outlook, Work}
+
+# Start Powershell as Admin
+Function su {start-process powershell -verb runas}
+
+# Shut down machine
+Function off {shutdown /s /t 0}
+
+# Restart machine
+Function restart {Restart-Computer}
+
+# Get process sorted by highest CPU activity
+Function cpu {ps | sort -Descending CPU | more}
+
+# Lock machine
+Function lock {clear; rundll32.exe user32.dll,LockWorkStation}
+
+# Clear user recycle bin
+Function bin {Clear-Recyclebin -Force}
+
+# List all current diretory items
+Function ll ($directory) {Get-ChildItem $directory -Force}
+
+# Set current directory to home
+Function cc {Set-Location $home}
+
+# Set current directory to profile folder
+Function me {Set-Location "$home\Documents\WindowsPowerShell"}
+
+# Set current directory to coding files location
+Function work {Set-Location "$home\OneDrive\Work"}
+
+# Open Finance excel file 
+Function finance {start $FINANCE}
+
+# Start Edge web browser 
+Function edge {start $EDGE}
+
+# Start Chrome web browser
+Function chrome {start $CHROME}
+
+# Start Outlook application
+Function outlook {start $EMAIL}
+
+# Start Onenote application
+Function onenote {start $ONENOTE}
+
+# Start Google Messenger appication
+Function text {start $TEXT}
+
+# Autolpull the most recent files from github for profile when shell starts
+cd $home\Documents\WindowsPowerShell\
+pull
+cc

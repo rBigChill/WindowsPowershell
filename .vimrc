@@ -2,7 +2,8 @@ filetype on
 filetype plugin on
 filetype indent on
 syntax on
-set number
+set number relativenumber
+set nu rnu
 set shiftwidth=4
 set tabstop=4
 set expandtab

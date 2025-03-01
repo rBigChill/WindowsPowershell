@@ -1,4 +1,4 @@
-python $HOME\Scripts\Weather\emailWeather.py > $HOME\Scripts\Weather\weather.txt
+python $HOME\Documents\WindowsPowershell\Scripts\Weather\emailWeather.py > $HOME\Documents\WindowsPowershell\Scripts\Weather\weather.txt
 
 function Send-Email {
     param(
@@ -18,6 +18,6 @@ function Send-Email {
     #ps outlook | select id | kill
 }
 
-$message = Get-Content -Path $HOME\Scripts\Weather\weather.txt -Encoding UTF8 -Raw
+$message = Get-Content -Path $HOME\Documents\WindowsPowershell\Scripts\Weather\weather.txt -Encoding UTF8 -Raw
 Send-Email -Subject "Weather" -Body $message
-Clear-Content $HOME\Scripts\Weather\weather.txt
+Clear-Content $HOME\Documents\WindowsPowershell\Scripts\Weather\weather.txt

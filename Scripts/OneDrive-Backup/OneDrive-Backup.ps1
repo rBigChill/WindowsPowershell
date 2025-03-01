@@ -1,5 +1,5 @@
 ﻿# Log
-$emailLog = "$HOME\Scripts\OneDrive-Backup\OneDrive-EmailLog.txt"
+$emailLog = "$HOME\Documents\WindowsPowershell\Scripts\OneDrive-Backup\OneDrive-EmailLog.txt"
 
 # Drive locations
 $oneDrive = "$HOME\OneDrive"

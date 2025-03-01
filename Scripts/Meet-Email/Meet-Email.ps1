@@ -22,7 +22,7 @@ function day{
     $outlook.Quit()
 }
 
-day > $HOME\Scripts\Meet-Email\meetings.txt
+day > $HOME\Documents\WindowsPowershell\Scripts\Meet-Email\meetings.txt
 
 function Send-Email {
     param(
@@ -42,11 +42,11 @@ function Send-Email {
     #ps outlook | select id | kill
 }
 
-$message = Get-Content -Path $HOME\Scripts\Meet-Email\meetings.txt -Raw
+$message = Get-Content -Path $HOME\Documents\WindowsPowershell\Scripts\Meet-Email\meetings.txt -Raw
 
 Write-Host "Sending Meetings..."
 Send-Email -Subject "Schedule $(Get-Date)" -Body $message
 Write-Host "Meetings Sent..."
 
 Write-Host "Clearing meetings.txt file..."
-Clear-Content $HOME\Scripts\Meet-Email\meetings.txt
+Clear-Content $HOME\Documents\WindowsPowershell\Scripts\Meet-Email\meetings.txt

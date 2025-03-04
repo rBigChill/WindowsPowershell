@@ -25,7 +25,7 @@ Function leggo {
             }
         }
         Default {
-            $apps = @($ONENOTE, $EMAIL, $TEXT)
+            $apps = @($ONENOTE, $EMAIL, $TEXT, $FINANCE)
             foreach ($app in $apps) {
                 start $app; sleep 1
             }

@@ -10,60 +10,12 @@ Function here {
         $m = 60 - (date).Minute
         $s = 60 - (date).Second
         if ($h -le 1) {
-            Write-Host "$h Hour:  `n$m Minutes  `n$s Seconds  "
+            Write-Host "$h Hour  `n$m Minutes  `n$s Seconds  "
         } else {
-            Write-Host "$h Hours:  `n$m Minutes  `n$s Seconds  "
+            Write-Host "$h Hours  `n$m Minutes  `n$s Seconds  "
         }
         [System.Console]::SetCursorPosition(0, 0)
         Sleep 1
-    }
-}
-
-Function aklogin {
-    param(
-        [switch]$u,
-        [switch]$t,
-        [string]$user
-    )
-    switch ($true) {
-        $u {
-            $a = Get-Content "\\KCL-WEB01\c$\Public\Login.txt"
-            foreach ($b in $a) {
-                if ($b.Contains($user)) {
-                    Write-Host $b
-                }
-            }
-        }
-        $t {
-            Get-Content "\\KCL-WEB01\c$\Public\Login.txt" -Tail 50
-        }
-        Default {
-            Get-Content "\\KCL-WEB01\c$\Public\Login.txt"
-        }
-    }
-}
-
-Function akgeneral {
-    param(
-        [switch]$t
-    )
-    switch ($true) {
-        $t {
-            Get-Content "\\KCL-WEB01\c$\Public\General.txt" -Tail 50
-        }
-        Default {
-            Get-Content "\\KCL-WEB01\c$\Public\General.txt"
-        }
-    }
-}
-
-Function aklogs {
-    $t = 60*15
-    while ($true) {
-        aklogin -t
-        sleep $t
-        akgeneral
-        sleep $t
     }
 }
 
@@ -125,7 +77,7 @@ Function stu {
             [int]$ID
         )
         Write-Host "AD Info"
-        Get-ADUser $ID
+        Get-ADUser -Filter "Name -Like '*$ID*'"
         Write-Host "Master Info"
         Student-Master -ID $ID
         Write-Host "Courses"
@@ -209,9 +161,8 @@ Function emp {
             [string]$first,
             [string]$last
         )
-        $initial = $first[0]
         Write-Host "AD Info"
-        Get-ADUser $initial$last
+        Get-ADUser -Filter "Name -Like '*$first $last*'"
         Write-Host "Master Info"
         Name-Master -first $first -last $last
         Write-Host "Load Info"

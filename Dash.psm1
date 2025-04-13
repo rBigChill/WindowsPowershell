@@ -2,12 +2,12 @@
 Function time {
     clear
     [System.Console]::CursorVisible = $false
-    $weather = Invoke-RestMethod https://wttr.in
+    $weather = Invoke-RestMethod https://wttr.in?0
     $hour = (Get-Date).Hour
     while($true) {
         $now = (Get-Date).Hour
         if ($now -gt $hour) {
-            $weather = Invoke-RestMethod https://wttr.in
+            $weather = Invoke-RestMethod https://wttr.in?0
             $hour = (Get-Date).Hour
             clear
         }

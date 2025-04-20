@@ -2,6 +2,7 @@
 Function time {
     clear
     [System.Console]::CursorVisible = $false
+    $news = Reddit -d
     $weather = Invoke-RestMethod https://wttr.in?0Q
     $hour = (Get-Date).Hour
     while($true) {
@@ -12,7 +13,8 @@ Function time {
             clear
         }
         [System.Console]::SetCursorPosition(0, 0)
-        Write-Host "$(date)`n`n$weather" -NoNewLine
+        $now = (date).DateTime
+        Write-Host "$now`n$($news[0])`n`n$weather" -NoNewLine
         Sleep 1
     }
 }

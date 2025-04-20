@@ -2,19 +2,22 @@
 Function time {
     clear
     [System.Console]::CursorVisible = $false
-    $news = Reddit -d
+    $nowHour = (Get-Date).Hour
+    $nowMinute = (Get-Date).Minute
+    $dateTime = (date).DateTime
     $weather = Invoke-RestMethod https://wttr.in?0Q
-    $hour = (Get-Date).Hour
+    $news = Reddit -d
     while($true) {
-        $now = (Get-Date).Hour
-        if ($now -gt $hour) {
+        if ($dateTime.hour -gt $hour) {
             $weather = Invoke-RestMethod https://wttr.in?0Q
-            $hour = (Get-Date).Hour
+            $nowHour = (Get-Date).Hour
+            $nowMinute = (Get-Date).Minute
+            $news = Reddit -d
             clear
         }
         [System.Console]::SetCursorPosition(0, 0)
-        $now = (date).DateTime
-        Write-Host "$now`n$($news[0])`n`n$weather" -NoNewLine
+        $dateTime = (date).DateTime
+        Write-Host "$dateTime`n`n$weather$($news[0])" -NoNewLine
         Sleep 1
     }
 }

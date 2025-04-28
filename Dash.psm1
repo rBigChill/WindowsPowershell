@@ -4,20 +4,25 @@ Function time {
     [System.Console]::CursorVisible = $false
     $nowHour = (Get-Date).Hour
     $nowMinute = (Get-Date).Minute
-    $dateTime = (date).DateTime
+    $dateTime = (Get-Date).DateTime
     $weather = Invoke-RestMethod https://wttr.in?0Q
     $news = Reddit -d
+    $index = 0
     while($true) {
-        if ($dateTime.hour -gt $hour) {
-            $weather = Invoke-RestMethod https://wttr.in?0Q
+        if ($index -ge $news.Length-2) {
+            $index = 0
+        }
+        if ($dateTime.hour -gt $nowHour) {
             $nowHour = (Get-Date).Hour
             $nowMinute = (Get-Date).Minute
+            $weather = Invoke-RestMethod https://wttr.in?0Q
             $news = Reddit -d
             clear
         }
         [System.Console]::SetCursorPosition(0, 0)
-        $dateTime = (date).DateTime
-        Write-Host "$dateTime`n`n$weather$($news[0])" -NoNewLine
+        $dateTime = (Get-Date).DateTime
+        Write-Host "$dateTime`n`n$weather$($news[$index])" -NoNewLine
+        $index += 1
         Sleep 1
     }
 }

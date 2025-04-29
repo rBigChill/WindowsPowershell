@@ -70,7 +70,7 @@ Function task {
 Function close {ps | where MainWindowTitle -ne "" | select id | kill}
 
 # List personal module functions
-Function lf {Get-Command -Module Functions, Github, Internet, Outlook, Work}
+Function lf {Get-Command -Module Functions, Github, Internet, Outlook}
 
 # Start Powershell as Admin
 Function su {start-process powershell -verb runas}

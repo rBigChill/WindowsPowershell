@@ -21,7 +21,7 @@ Function time {
         }
         [System.Console]::SetCursorPosition(0, 0)
         $dateTime = (Get-Date).DateTime
-        Write-Host "$dateTime`n`n$weather$($news[$index])" -NoNewLine
+        Write-Host "$dateTime`n`n$weather" -NoNewLine
         $index += 1
         Sleep 1
     }

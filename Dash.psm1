@@ -6,7 +6,7 @@ Function time {
     $nowMinute = (Get-Date).Minute
     $dateTime = (Get-Date).DateTime
     $weather = Invoke-RestMethod https://wttr.in?0Q
-    $news = Reddit -d
+    #$news = Reddit -d
     $index = 0
     while($true) {
         if ($index -ge $news.Length-2) {

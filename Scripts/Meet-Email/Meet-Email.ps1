@@ -42,6 +42,8 @@ function Send-Email {
     #ps outlook | select id | kill
 }
 
+close
+
 $message = Get-Content -Path $HOME\Documents\WindowsPowershell\Scripts\Meet-Email\meetings.txt -Raw
 
 Write-Host "Sending Meetings..."

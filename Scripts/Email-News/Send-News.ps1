@@ -1,3 +1,5 @@
+close
+
 Write-Host "Downloading Reddit content.."
 python $HOME\Documents\WindowsPowershell\Scripts\Email-News\Reddit.py >> $HOME\Documents\WindowsPowershell\Scripts\Email-News\News.txt
 

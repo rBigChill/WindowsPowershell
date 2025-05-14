@@ -32,4 +32,5 @@ function Export-Finances {
     Send-Email -subject "Finances" -body "Update..." -file $file
 }
 
+close
 Export-Finances

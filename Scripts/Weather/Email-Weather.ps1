@@ -1,3 +1,5 @@
+close
+
 python $HOME\Documents\WindowsPowershell\Scripts\Weather\emailWeather.py > $HOME\Documents\WindowsPowershell\Scripts\Weather\weather.txt
 
 function Send-Email {

@@ -66,6 +66,14 @@ Function task {
     Get-ScheduledTask | get-scheduledtaskinfo | where {$_.TaskPath -eq "\Personal\"}
 }
 
+# Run Missed Run Task
+Function runem {
+    foreach ($task in (task).taskname) {
+        start-scheduledtask -taskname \Personal\$task
+        sleep 15
+    }
+}
+
 # Close all open windows
 Function close {ps | where MainWindowTitle -ne "" | select id | kill}
 

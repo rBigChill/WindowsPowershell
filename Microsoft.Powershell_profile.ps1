@@ -75,7 +75,7 @@ Function runem {
 }
 
 # Close outlook
-Function close {ps | where MainWindowTitle -eq "Outlook" | select id | kill}
+Function close {ps Outlook | select id | kill}
 
 # Close all open windows
 Function x {ps | where MainWindowTitle -ne "" | select id | kill}

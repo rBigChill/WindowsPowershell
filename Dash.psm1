@@ -16,7 +16,7 @@ Function time {
             $nowHour = (Get-Date).Hour
             $nowMinute = (Get-Date).Minute
             $weather = Invoke-RestMethod https://wttr.in?0Q
-            $news = Reddit -d
+            #$news = Reddit -d
             clear
         }
         [System.Console]::SetCursorPosition(0, 0)

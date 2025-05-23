@@ -5,21 +5,29 @@ Function time {
     $nowHour = (Get-Date).Hour
     $nowMinute = (Get-Date).Minute
     $dateTime = Get-Date
-    $weather = Invoke-RestMethod https://wttr.in?0Q
-    #$news = Reddit -d
+    $weather = weather -n
+    $news = Reddit -d
+    $index = 0
     while($true) {
+        if ($dateTime.Second -eq 59) {
+            $index += 1
+            clear
+        }
+        if ($index -ge $news.Length - 2) {
+            $index = 0
+            clear
+        }
         if ($dateTime.hour -gt $nowHour) {
             $nowHour = (Get-Date).Hour
             $nowMinute = (Get-Date).Minute
-            $weather = Invoke-RestMethod https://wttr.in?0Q
-            #$news = Reddit -d
+            $weather = weather -n
+            $news = Reddit -d
+            $index = 0
             clear
         }
         [System.Console]::SetCursorPosition(0, 0)
         $dateTime = Get-Date
-        Write-Host "$($(Get-Date).DateTime)`n`n$weather" -NoNewLine
+        Write-Host "$($(Get-Date).DateTime)`n`n$weather`n`n$($news[$index].Trim())" -NoNewLine
         Sleep 1
     }
 }
-
-# Grab seconds. Every 00; print new article

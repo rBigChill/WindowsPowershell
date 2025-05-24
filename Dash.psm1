@@ -15,7 +15,7 @@ Function time {
             $index += 1
             clear
         }
-        if ($index -ge $news.Length - 2) {
+        if ($index -ge $news.Length - 1) {
             $index = 0
             clear
         }

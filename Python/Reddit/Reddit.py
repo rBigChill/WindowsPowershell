@@ -69,11 +69,9 @@ class Reddit:
         #print(f"{'':10}*** REDDIT ***")
         #print()
         for i in self.ARTICLES:
-            #article = f"{count}) {i.title}\n\t--> {i.url}\n"
             article = f"{i.title}"
             print(article)
             count += 1
-        print()
     
     # clears the screen
     def _clear(self):
@@ -101,7 +99,6 @@ class Reddit:
         self._prompt()
 
     def DashReddit(self):
-        self._clear()
         self._grabArticles()
         self._printDash()
 

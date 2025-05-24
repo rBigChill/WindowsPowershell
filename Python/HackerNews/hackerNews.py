@@ -64,7 +64,6 @@ class HackerNews:
             article = f"{i.title}"
             print(article)
             count += 1
-        print()
 
     def _clear(self):
         system('cls') if name == 'nt' else system('clear')
@@ -89,7 +88,6 @@ class HackerNews:
         self._prompt()
         
     def GetDashNews(self):
-        self._clear()
         self._getArticles()
         self._printDash()
 

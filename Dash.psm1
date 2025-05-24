@@ -1,12 +1,14 @@
 # Clear console and start a clock with weather info
 Function time {
-    clear
     [System.Console]::CursorVisible = $false
+    clear
     $nowHour = (Get-Date).Hour
     $nowMinute = (Get-Date).Minute
     $dateTime = Get-Date
     $weather = weather -n
     $news = Reddit -d
+    $news += hacker -d
+    $news += newsapi -d
     $index = 0
     while($true) {
         if ($dateTime.Second -eq 59) {
@@ -18,16 +20,19 @@ Function time {
             clear
         }
         if ($dateTime.hour -gt $nowHour) {
+            clear
             $nowHour = (Get-Date).Hour
             $nowMinute = (Get-Date).Minute
+            $dateTime = Get-Date
             $weather = weather -n
             $news = Reddit -d
+            $news += hacker -d
+            $news += newsapi -d
             $index = 0
-            clear
         }
         [System.Console]::SetCursorPosition(0, 0)
         $dateTime = Get-Date
-        Write-Host "$($(Get-Date).DateTime)`n`n$weather`n`n$($news[$index].Trim())" -NoNewLine
+        Write-Host "$($(Get-Date).DateTime)`n`n$weather`n`n$($news[$index].ToString().Trim())" -NoNewLine
         Sleep 1
     }
 }

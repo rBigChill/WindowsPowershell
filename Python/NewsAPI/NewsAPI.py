@@ -69,7 +69,6 @@ class NewsAPI:
         self._prompt()
 
     def GetDashNews(self):
-        self._clear()
         self._getArticles()
         self._printDash()
 

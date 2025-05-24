@@ -60,10 +60,8 @@ class HackerNews:
 
     def _printDash(self):
         count = 1
-        print(f"{'':10}*** Hacker News ***")
-        print()
         for i in self.frontPage:
-            article = f"{count}) {i.title}\n\t--> {i.url}\n"
+            article = f"{i.title}"
             print(article)
             count += 1
         print()

@@ -42,10 +42,8 @@ class NewsAPI:
 
     def _printDash(self):
         count = 1
-        print(f"{'':10}*** Top US Articles ***")
-        print()
         for i in self.Articles:
-            print(f"{count}) {i.title}\n\t--> {i.url}\n")
+            print(f"{i.title}")
             count += 1
 
     def _clear(self):

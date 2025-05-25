@@ -6,9 +6,9 @@ Function time {
     $nowMinute = (Get-Date).Minute
     $dateTime = Get-Date
     $weather = weather -n
-    $news = Reddit -d
-    $news += hacker -d
-    $news += newsapi -d
+    $news = [System.Text.Encoding]::UTF8 | Reddit -d
+    $news += [System.Text.Encoding]::UTF8 | hacker -d
+    $news += [System.Text.Encoding]::UTF8 | newsapi -d
     $index = 0
     while($true) {
         if ($dateTime.Second -eq 59) {

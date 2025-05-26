@@ -78,7 +78,7 @@ Function runem {
 Function close {ps Outlook | select id | kill}
 
 # Close all open windows
-Function x {ps | where MainWindowTitle -ne "" | select id | kill}
+Function closeall {ps | where MainWindowTitle -ne "" | select id | kill}
 
 # List personal module functions
 Function lf {Get-Command -Module Functions, Github, Internet, Outlook}

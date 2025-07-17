@@ -27,7 +27,9 @@ Function leggo {
         Default {
             $apps = @($ONENOTE, $EMAIL, $TEXT, $FINANCE)
             foreach ($app in $apps) {
-                start $app; Read-host
+                Write-host "Opening $app..."
+                start $app
+                Read-host "Press Enter..."
             }
         }
     }

@@ -15,7 +15,7 @@ Import-Module $home\Documents\WindowsPowerShell\Work
 # Startup favorite applications to work with
 Function leggo {
     param(
-        [switch]$w
+        [switch]$a
     )
     switch ($true) {
         $a {

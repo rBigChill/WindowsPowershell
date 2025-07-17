@@ -18,8 +18,8 @@ Function leggo {
         [switch]$w
     )
     switch ($true) {
-        $w {
-            $apps = @($ONENOTE, $EMAIL)
+        $a {
+            $apps = @($ONENOTE, $EMAIL, $TEXT, $FINANCE)
             foreach ($app in $apps) {
                 start $app; sleep 1
             }
@@ -27,7 +27,7 @@ Function leggo {
         Default {
             $apps = @($ONENOTE, $EMAIL, $TEXT, $FINANCE)
             foreach ($app in $apps) {
-                start $app; sleep 1
+                start $app; Read-host
             }
         }
     }

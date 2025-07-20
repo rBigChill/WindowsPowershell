@@ -1,4 +1,8 @@
-﻿function Send-Email {
+﻿if ($(ps outlook).Name -eq 'OUTLOOK')
+    close
+)
+
+function Send-Email {
     param(
     [string]$subject,
     [string]$body,
@@ -32,5 +36,4 @@ function Export-Finances {
     Send-Email -subject "Finances" -body "Update..." -file $file
 }
 
-close
 Export-Finances

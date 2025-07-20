@@ -1,4 +1,6 @@
-close
+if ($(ps outlook).Name -eq 'OUTLOOK') {
+    close
+}
 
 python $HOME\Documents\WindowsPowershell\Scripts\Weather\emailWeather.py > $HOME\Documents\WindowsPowershell\Scripts\Weather\weather.txt
 

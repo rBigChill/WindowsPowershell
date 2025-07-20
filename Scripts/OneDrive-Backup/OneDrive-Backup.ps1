@@ -1,4 +1,6 @@
-﻿#close
+﻿if ($(ps outlook).Name -eq 'OUTLOOK') {
+    close
+}
 
 # Log
 $emailLog = "$HOME\Documents\WindowsPowershell\Scripts\OneDrive-Backup\OneDrive-EmailLog.txt"
@@ -123,15 +125,15 @@ function Update-BackupDrive {
 # Main
 try {
     Update-BackupDrive
-    #$date = Get-Date
-    #$body = Get-Content -Path $emailLog -Encoding UTF8 -Raw
-    #Send-Email -subject "Log File: $date" -body "$body"
-    #Clear-Content -Path $emailLog
+    $date = Get-Date
+    $body = Get-Content -Path $emailLog -Encoding UTF8 -Raw
+    Send-Email -subject "Log File: $date" -body "$body"
+    Clear-Content -Path $emailLog
 } catch {
-    #$message = $_
-    #Log-This $message
-    #$date = Get-Date
-    #$body = Get-Content -Path $emailLog -Encoding UTF8 -Raw
-    #Send-Email -subject "Log File: $date" -body "$body"
-    #Clear-Content -Path $emailLog
+    $message = $_
+    Log-This $message
+    $date = Get-Date
+    $body = Get-Content -Path $emailLog -Encoding UTF8 -Raw
+    Send-Email -subject "Log File: $date" -body "$body"
+    Clear-Content -Path $emailLog
 }

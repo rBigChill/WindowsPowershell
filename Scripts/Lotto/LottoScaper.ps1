@@ -30,7 +30,9 @@ function Send-Email {
     #ps outlook | select id | kill
 }
 
-close
+if ($(ps outlook).Name -eq 'OUTLOOK') {
+    close
+}
 
 Write-Host "Sending..."
 Send-Email -Subject "Lotto Texas $(Get-Date)" -Body $message

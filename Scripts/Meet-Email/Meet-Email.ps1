@@ -42,7 +42,9 @@ function Send-Email {
     #ps outlook | select id | kill
 }
 
-close
+if ($(ps outlook).Name -eq 'OUTLOOK') {
+    close
+}
 
 $message = Get-Content -Path $HOME\Documents\WindowsPowershell\Scripts\Meet-Email\meetings.txt -Raw
 

@@ -71,6 +71,7 @@ Function task {
 # Run Missed Run Task
 Function runem {
     foreach ($task in (task).taskname) {
+        Write-Host 'Running: ' $task
         start-scheduledtask -taskname \Personal\$task
         sleep 15
     }

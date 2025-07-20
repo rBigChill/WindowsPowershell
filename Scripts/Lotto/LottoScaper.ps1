@@ -30,7 +30,7 @@ function Send-Email {
     #ps outlook | select id | kill
 }
 
-if ($(ps outlook).Name -eq 'OUTLOOK') {
+if ($(ps outlook -ErrorAction SilentlyContinue).Name -eq 'OUTLOOK') {
     close
 }
 

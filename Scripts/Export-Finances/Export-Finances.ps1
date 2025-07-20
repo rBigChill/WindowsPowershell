@@ -1,6 +1,6 @@
-﻿if ($(ps outlook).Name -eq 'OUTLOOK')
+﻿if ($(ps outlook -ErrorAction SilentlyContinue).Name -eq 'OUTLOOK') {
     close
-)
+}
 
 function Send-Email {
     param(

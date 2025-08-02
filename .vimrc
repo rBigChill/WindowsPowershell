@@ -46,7 +46,7 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'mattn/emmet-vim'
     Plug 'vim-syntastic/syntastic'
-    Plug 'valloric/youcompleteme'
+"    Plug 'valloric/youcompleteme'
     Plug 'pprovost/vim-ps1'
 "    Plug 'OmniSharp/omnisharp-vim'
 

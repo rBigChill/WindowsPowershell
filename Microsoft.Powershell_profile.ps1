@@ -35,6 +35,18 @@ Function leggo {
     }
 }
 
+# Check disk / computer health
+Function health {
+    Write-Host "Running sfc /scannow"
+    sfc /scannow
+
+    Write-Host "Running DISM.exe /Online /Cleanup-image /Restorehealth"
+    DISM.exe /Online /Cleanup-image /Resotrehealth
+    
+    Write-Host "Running chkdsk /f"
+    chkdsk /f
+}
+
 # Update applications 
 Function update {
     wsl --update

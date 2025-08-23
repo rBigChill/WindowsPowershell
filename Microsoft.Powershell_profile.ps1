@@ -40,10 +40,10 @@ Function health {
     Write-Host "Running sfc /scannow"
     sfc /scannow
 
-    Write-Host "Running DISM.exe /Online /Cleanup-image /Restorehealth"
-    DISM.exe /Online /Cleanup-image /Resotrehealth
+    Write-Host "`nRunning DISM.exe /Online /Cleanup-image /Restorehealth"
+    DISM.exe /Online /Cleanup-image /Restorehealth
     
-    Write-Host "Running chkdsk /f"
+    Write-Host "`nRunning chkdsk /f"
     chkdsk /f
 }
 

@@ -82,7 +82,7 @@ Function close {ps Outlook | select id | kill}
 Function closeall {ps | where MainWindowTitle -ne "" | select id | kill}
 
 # List personal module functions
-Function lf {Get-Command -Module Functions, Github, Internet, Outlook}
+Function lf {Get-Command -Module Functions, Github, Internet, Outlook, Windows}
 
 # Start Powershell as Admin
 Function su {start-process powershell -verb runas}

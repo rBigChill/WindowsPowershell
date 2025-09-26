@@ -215,5 +215,5 @@ if __name__ == "__main__":
             print(f'\n\tWeather for {w.GRID.ll.info}')
             w.DailyRequest()
             w.HourlyRequest()
-    except:
-        print("No Data")
+    except Exception as e:
+        print(e)

@@ -1,8 +1,4 @@
-﻿if ($(ps outlook -ErrorAction SilentlyContinue).Name -eq 'OUTLOOK') {
-    close
-}
-
-# Log
+﻿# Log
 $emailLog = "$HOME\Documents\WindowsPowershell\Scripts\OneDrive-Backup\OneDrive-EmailLog.txt"
 
 # Drive locations
@@ -43,7 +39,13 @@ function Send-Email {
     $namespace = $outlook.GetNameSpace("MAPI")
     $outbox = $namespace.GetDefaultFolder(4)
     while ($outbox.Items.Count -gt 0) {Write-Host "Sending..."; sleep 1}
-    #ps outlook | select id | kill
+
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($mail)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($namespace)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($outbox)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($outlook)  | Out-Null
+    [GC]::Collect()
+    [GC]::WaitForPendingFinalizers()
 }
 
 function Get-DriveContents {

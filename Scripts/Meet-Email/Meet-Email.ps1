@@ -19,17 +19,23 @@ function day{
         "{0:HH:mm}-{1:HH:mm}: {2}" -f [DateTime]$appt.Start, [DateTime]$appt.End, $appt.Subject
     }
     Write-Host ""
-    $outlook.Quit()
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($folder)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($calendar)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($meetings)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($namespace)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($outbox)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($outlook)  | Out-Null
+    [GC]::Collect()
+    [GC]::WaitForPendingFinalizers()
 }
 
 day > $HOME\Documents\WindowsPowershell\Scripts\Meet-Email\meetings.txt
 
 function Send-Email {
     param(
-    [string]$subject,
-    [string]$body
+        [string]$subject,
+        [string]$body
     )
-
     $outlook = New-Object -ComObject Outlook.Application
     $mail = $outlook.CreateItem(0)
     $mail.to = "cisneros.jorge.a@gmail.com"
@@ -39,11 +45,13 @@ function Send-Email {
     $namespace = $outlook.GetNameSpace("MAPI")
     $outbox = $namespace.GetDefaultFolder(4)
     while ($outbox.Items.Count -gt 0) {Write-Host "Sending..."; sleep 1}
-    #ps outlook | select id | kill
-}
 
-if ($(ps outlook -ErrorAction SilentlyContinue).Name -eq 'OUTLOOK') {
-    close
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($mail)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($namespace)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($outbox)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($outlook)  | Out-Null
+    [GC]::Collect()
+    [GC]::WaitForPendingFinalizers()
 }
 
 $message = Get-Content -Path $HOME\Documents\WindowsPowershell\Scripts\Meet-Email\meetings.txt -Raw

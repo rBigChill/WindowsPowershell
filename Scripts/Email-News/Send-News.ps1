@@ -1,7 +1,3 @@
-if ($(ps outlook -ErrorAction SilentlyContinue).Name -eq 'OUTLOOK') {
-    close
-}
-
 Write-Host "Downloading Reddit content.."
 python $HOME\Documents\WindowsPowershell\Scripts\Email-News\Reddit.py >> $HOME\Documents\WindowsPowershell\Scripts\Email-News\News.txt
 
@@ -13,10 +9,9 @@ python $HOME\Documents\WindowsPowershell\Scripts\Email-News\newsAPI.py >> $HOME\
 
 function Send-Email {
     param(
-    [string]$subject,
-    [string]$body
+        [string]$subject,
+        [string]$body
     )
-
     $outlook = New-Object -ComObject Outlook.Application
     $mail = $outlook.CreateItem(0)
     $mail.to = "cisneros.jorge.a@gmail.com"
@@ -26,7 +21,13 @@ function Send-Email {
     $namespace = $outlook.GetNameSpace("MAPI")
     $outbox = $namespace.GetDefaultFolder(4)
     while ($outbox.Items.Count -gt 0) {Write-Host "Sending..."; sleep 1}
-    #ps outlook | select id | kill
+
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($mail)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($namespace)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($outbox)  | Out-Null
+    [System.Runtime.Interopservices.Marshal]::ReleaseComObject($outlook)  | Out-Null
+    [GC]::Collect()
+    [GC]::WaitForPendingFinalizers()
 }
 
 $message = Get-Content -Path $HOME\Documents\WindowsPowershell\Scripts\Email-News\News.txt -Raw

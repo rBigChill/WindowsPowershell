@@ -136,3 +136,6 @@ Function text {start $TEXT}
 cd $home\Documents\WindowsPowerShell\
 pull
 cc
+
+# Open remote desktop
+Function remote {start C:\Windows\system32\mstsc.exe}

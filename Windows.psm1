@@ -8,7 +8,7 @@ Function leggo {
             $apps = @($ONENOTE, $EMAIL, $TEXT, $FINANCE)
             foreach ($app in $apps) {
                 start $app;
-                sleep 1
+                sleep 2
             }
         }
         Default {

@@ -5,14 +5,14 @@ Function leggo {
     )
     switch ($true) {
         $a {
-            $apps = @($ONENOTE, $EMAIL, $TEXT, $FINANCE)
+            $apps = @($ONENOTE, $EMAIL, $FINANCE, $TEXT)
             foreach ($app in $apps) {
                 start $app;
                 sleep 2
             }
         }
         Default {
-            $apps = @($ONENOTE, $EMAIL, $TEXT, $FINANCE)
+            $apps = @($ONENOTE, $EMAIL, $FINANCE, $TEXT)
             foreach ($app in $apps) {
                 Write-host "Opening $app..."
                 start $app

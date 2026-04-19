@@ -15,7 +15,8 @@ finally:
 class Location:
     def __init__(self):
         WEBSITE = "https://api.techniknews.net/ipgeo/"
-        data = requests.get(WEBSITE)
+        headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"}
+        data = requests.get(WEBSITE, headers=headers)
         json = data.json()
         city = json['city']
         state = json['regionName']

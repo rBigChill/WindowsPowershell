@@ -140,3 +140,15 @@ cc
 
 # Open remote desktop
 Function remote {start C:\Windows\system32\mstsc.exe}
+
+Function doit {
+    $MAINPATH = "$HOME\Documents\WindowsPowershell\Scripts"
+
+    & $MAINPATH\Email-News\Send-News.ps1
+    & $MAINPATH\Lotto\LottoScaper.ps1
+    & $MAINPATH\Meet-Email\Meet-Email.ps1
+    & $MAINPATH\OneDrive-Backup\OneDrive-Backup.ps1
+    & $MAINPATH\Weather\Email-Weather.ps1
+    Update
+    Health
+}

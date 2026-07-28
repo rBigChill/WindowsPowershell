@@ -1,5 +1,5 @@
 # Set Window Title
-[System.Console]::Title = "Welcome to the Jungle!"
+#[System.Console]::Title = "Welcome to the Jungle!"
 
 # Set shell prompt
 Function prompt {"`n$(gl)`n`n:)~ "}

@@ -149,5 +149,5 @@ Function doit {
     & $MAINPATH\OneDrive-Backup\OneDrive-Backup.ps1
     & $MAINPATH\Weather\Email-Weather.ps1
     Update
-    Health
+#    Health
 }

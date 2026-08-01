@@ -99,9 +99,9 @@ class Weather:
                     message = f"{i.name}\n{i.temperature:4}{i.temperatureUnit:2}: {i.shortForecast}"
                     print(message)
                 else:
-                    message = f"{''}{i.temperature:4}{i.temperatureUnit:2}: {i.shortForecast}"
+                    message = f"{i.temperature:4}{i.temperatureUnit:2}: {i.shortForecast}"
                     print(message)
-            print()
+                    print()
 
         if rType == 'h':
             count = 0

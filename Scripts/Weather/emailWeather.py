@@ -70,7 +70,6 @@ class Weather:
                 if i.isDaytime == True:
                     message = f"{i.name}\n\t{i.temperature}{i.temperatureUnit}: {i.shortForecast}"
                     print(message)
-                    print()
                 else:
                     message = f"\t{i.temperature}{i.temperatureUnit}: {i.shortForecast}"
                     print(message)
